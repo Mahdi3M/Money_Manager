@@ -1,0 +1,13 @@
+money.manager.Settings$1
+money.manager.Settings$10
+money.manager.Settings$11
+money.manager.Settings$12
+money.manager.Settings
+money.manager.Settings$2
+money.manager.Settings$3
+money.manager.Settings$4
+money.manager.Settings$5
+money.manager.Settings$6
+money.manager.Settings$7
+money.manager.Settings$8
+money.manager.Settings$9
