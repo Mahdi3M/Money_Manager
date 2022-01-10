@@ -505,10 +505,14 @@ public class Daily extends javax.swing.JFrame {
 
     private void rSButtonHover9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover9ActionPerformed
         // TODO add your handling code here:
+<<<<<<< Updated upstream
         Loginpage login = new Loginpage();
         login.show();
         
         dispose();
+=======
+        
+>>>>>>> Stashed changes
     }//GEN-LAST:event_rSButtonHover9ActionPerformed
 
     private void rSButtonHover10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover10ActionPerformed

@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/mahdi/OneDrive/Desktop/Money_Manager/src/Interfaces/Main.java</file>
             <file>file:/C:/Users/mahdi/OneDrive/Desktop/Money_Manager/src/Interfaces/Reportpage.form</file>
             <file>file:/C:/Users/mahdi/OneDrive/Desktop/Money_Manager/src/Interfaces/Savings.java</file>
@@ -16,6 +17,18 @@
             <file>file:/C:/Users/mahdi/OneDrive/Desktop/Money_Manager/src/Interfaces/Statistics.java</file>
             <file>file:/C:/Users/mahdi/OneDrive/Desktop/Money_Manager/src/Interfaces/Daily.java</file>
             <file>file:/C:/Users/mahdi/OneDrive/Desktop/Money_Manager/src/Interfaces/Month.java</file>
+=======
+            <file>file:/E:/OneDrive%20-%20Military%20Institute%20of%20Science%20and%20Technology%20(MIST)/Level-2%20Term-2/CSE-220%20OOP%20Sessional-II/Project/Money_Manager/src/Interfaces/SignupPage.java</file>
+            <file>file:/E:/OneDrive%20-%20Military%20Institute%20of%20Science%20and%20Technology%20(MIST)/Level-2%20Term-2/CSE-220%20OOP%20Sessional-II/Project/Money_Manager/src/Interfaces/Home.java</file>
+            <file>file:/E:/OneDrive%20-%20Military%20Institute%20of%20Science%20and%20Technology%20(MIST)/Level-2%20Term-2/CSE-220%20OOP%20Sessional-II/Project/Money_Manager/src/Interfaces/Savings.java</file>
+            <file>file:/E:/OneDrive%20-%20Military%20Institute%20of%20Science%20and%20Technology%20(MIST)/Level-2%20Term-2/CSE-220%20OOP%20Sessional-II/Project/Money_Manager/src/Interfaces/Reportpagesavings.java</file>
+            <file>file:/E:/OneDrive%20-%20Military%20Institute%20of%20Science%20and%20Technology%20(MIST)/Level-2%20Term-2/CSE-220%20OOP%20Sessional-II/Project/Money_Manager/src/Interfaces/Daily.java</file>
+            <file>file:/E:/OneDrive%20-%20Military%20Institute%20of%20Science%20and%20Technology%20(MIST)/Level-2%20Term-2/CSE-220%20OOP%20Sessional-II/Project/Money_Manager/src/Interfaces/Settings.java</file>
+            <file>file:/E:/OneDrive%20-%20Military%20Institute%20of%20Science%20and%20Technology%20(MIST)/Level-2%20Term-2/CSE-220%20OOP%20Sessional-II/Project/Money_Manager/src/Interfaces/Month.java</file>
+            <file>file:/E:/OneDrive%20-%20Military%20Institute%20of%20Science%20and%20Technology%20(MIST)/Level-2%20Term-2/CSE-220%20OOP%20Sessional-II/Project/Money_Manager/src/Interfaces/Filter.java</file>
+            <file>file:/E:/OneDrive%20-%20Military%20Institute%20of%20Science%20and%20Technology%20(MIST)/Level-2%20Term-2/CSE-220%20OOP%20Sessional-II/Project/Money_Manager/src/Interfaces/Loginpage.java</file>
+            <file>file:/E:/OneDrive%20-%20Military%20Institute%20of%20Science%20and%20Technology%20(MIST)/Level-2%20Term-2/CSE-220%20OOP%20Sessional-II/Project/Money_Manager/src/Interfaces/Statistics.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
