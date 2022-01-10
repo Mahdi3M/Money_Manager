@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package money.manager;
+package Interfaces;
 
 import java.awt.*;
 
@@ -214,7 +214,7 @@ public class Settings extends javax.swing.JFrame {
                         .addComponent(rSButtonHover9, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 7, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(rSButtonHover12, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -282,29 +282,24 @@ public class Settings extends javax.swing.JFrame {
         Info.setPreferredSize(new java.awt.Dimension(400, 205));
         Info.setLayout(new java.awt.GridLayout(5, 2));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Email :");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jLabel1.setPreferredSize(new java.awt.Dimension(60, 15));
         Info.add(jLabel1);
 
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("mahdimohtasim@gmail.com");
         Info.add(jLabel6);
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Phone :");
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jLabel2.setPreferredSize(new java.awt.Dimension(60, 15));
         Info.add(jLabel2);
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("01740997497");
         Info.add(jLabel7);
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Gender :");
         jLabel3.setToolTipText("");
@@ -312,29 +307,24 @@ public class Settings extends javax.swing.JFrame {
         jLabel3.setPreferredSize(new java.awt.Dimension(60, 15));
         Info.add(jLabel3);
 
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Male");
         Info.add(jLabel8);
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Occupation :");
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jLabel4.setPreferredSize(new java.awt.Dimension(60, 15));
         Info.add(jLabel4);
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Student");
         Info.add(jLabel5);
 
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Status :");
         jLabel9.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jLabel9.setPreferredSize(new java.awt.Dimension(60, 15));
         Info.add(jLabel9);
 
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Under Budget");
         Info.add(jLabel10);
 
@@ -390,26 +380,17 @@ public class Settings extends javax.swing.JFrame {
         panel6.setForeground(new java.awt.Color(102, 102, 102));
         panel6.setLayout(new java.awt.GridLayout(5, 1));
 
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
         jTextField1.setAutoscrolls(false);
         jTextField1.setVerifyInputWhenFocusTarget(false);
         panel6.add(jTextField1);
-
-        jPasswordField1.setForeground(new java.awt.Color(0, 0, 0));
         panel6.add(jPasswordField1);
-
-        jPasswordField2.setForeground(new java.awt.Color(0, 0, 0));
         panel6.add(jPasswordField2);
 
-        jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Taka", "Dollars" }));
         panel6.add(jComboBox1);
-
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
         panel6.add(jTextField2);
 
         jButton9.setBackground(new java.awt.Color(204, 204, 204));
-        jButton9.setForeground(new java.awt.Color(0, 0, 0));
         jButton9.setText("Save");
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
@@ -424,7 +405,7 @@ public class Settings extends javax.swing.JFrame {
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(panel4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(panel6, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -451,18 +432,34 @@ public class Settings extends javax.swing.JFrame {
 
     private void rSButtonHover4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover4ActionPerformed
         // TODO add your handling code here:
+        Month month = new Month();
+        month.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover4ActionPerformed
 
     private void rSButtonHover5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover5ActionPerformed
         // TODO add your handling code here:
+        Filter filter = new Filter();
+        filter.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover5ActionPerformed
 
     private void rSButtonHover6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover6ActionPerformed
         // TODO add your handling code here:
+        Statistics stats = new Statistics();
+        stats.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover6ActionPerformed
 
     private void rSButtonHover7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover7ActionPerformed
         // TODO add your handling code here:
+        Daily daily = new Daily();
+        daily.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover7ActionPerformed
 
     private void rSButtonHover8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover8ActionPerformed
@@ -474,14 +471,26 @@ public class Settings extends javax.swing.JFrame {
 
     private void rSButtonHover9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover9ActionPerformed
         // TODO add your handling code here:
+        Loginpage login = new Loginpage();
+        login.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover9ActionPerformed
 
     private void rSButtonHover10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover10ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:                                                
+        Home home = new Home();
+        home.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover10ActionPerformed
 
     private void rSButtonHover11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover11ActionPerformed
         // TODO add your handling code here:
+        Savings savings = new Savings();
+        savings.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover11ActionPerformed
 
     private void rSButtonHover12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover12ActionPerformed
@@ -490,6 +499,10 @@ public class Settings extends javax.swing.JFrame {
 
     private void rSButtonHover13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover13ActionPerformed
         // TODO add your handling code here:
+        Settings settings = new Settings();
+        settings.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover13ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed

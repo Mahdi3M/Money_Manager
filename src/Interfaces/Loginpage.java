@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package money.manager;
+package Interfaces;
 
 /**
  *
@@ -81,6 +81,11 @@ public class Loginpage extends javax.swing.JFrame {
         rSButtonHover4.setText("Login");
         rSButtonHover4.setColorText(new java.awt.Color(0, 181, 240));
         rSButtonHover4.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        rSButtonHover4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonHover4ActionPerformed(evt);
+            }
+        });
 
         rSButtonHover3.setBackground(new java.awt.Color(255, 255, 255));
         rSButtonHover3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 181, 240)));
@@ -193,6 +198,14 @@ public class Loginpage extends javax.swing.JFrame {
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void rSButtonHover4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover4ActionPerformed
+        // TODO add your handling code here:                                                
+        Home home = new Home();
+        home.show();
+        
+        dispose();
+    }//GEN-LAST:event_rSButtonHover4ActionPerformed
 
     /**
      * @param args the command line arguments

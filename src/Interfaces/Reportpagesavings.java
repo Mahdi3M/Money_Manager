@@ -378,18 +378,34 @@ public class Reportpagesavings extends javax.swing.JFrame {
 
     private void rSButtonHover4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover4ActionPerformed
         // TODO add your handling code here:
+        Month month = new Month();
+        month.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover4ActionPerformed
 
     private void rSButtonHover5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover5ActionPerformed
         // TODO add your handling code here:
+        Filter filter = new Filter();
+        filter.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover5ActionPerformed
 
     private void rSButtonHover6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover6ActionPerformed
         // TODO add your handling code here:
+        Statistics stats = new Statistics();
+        stats.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover6ActionPerformed
 
     private void rSButtonHover7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover7ActionPerformed
         // TODO add your handling code here:
+        Daily daily = new Daily();
+        daily.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover7ActionPerformed
 
     private void rSButtonHover8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover8ActionPerformed
@@ -401,14 +417,26 @@ public class Reportpagesavings extends javax.swing.JFrame {
 
     private void rSButtonHover9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover9ActionPerformed
         // TODO add your handling code here:
+        Loginpage login = new Loginpage();
+        login.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover9ActionPerformed
 
     private void rSButtonHover10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover10ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:                                                
+        Home home = new Home();
+        home.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover10ActionPerformed
 
     private void rSButtonHover11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover11ActionPerformed
         // TODO add your handling code here:
+        Savings savings = new Savings();
+        savings.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover11ActionPerformed
 
     private void rSButtonHover12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover12ActionPerformed
@@ -417,6 +445,10 @@ public class Reportpagesavings extends javax.swing.JFrame {
 
     private void rSButtonHover13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover13ActionPerformed
         // TODO add your handling code here:
+        Settings settings = new Settings();
+        settings.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover13ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

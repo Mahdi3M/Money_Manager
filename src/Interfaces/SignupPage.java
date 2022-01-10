@@ -259,6 +259,11 @@ public class SignupPage extends javax.swing.JFrame {
         rSButtonHover4.setText("Login");
         rSButtonHover4.setColorText(new java.awt.Color(0, 181, 240));
         rSButtonHover4.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        rSButtonHover4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonHover4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(rSButtonHover4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 90, 25));
 
         rSButtonHover8.setBackground(new java.awt.Color(153, 51, 0));
@@ -317,6 +322,14 @@ public class SignupPage extends javax.swing.JFrame {
         System.exit(0);
         // TODO add your handling code here:
     }//GEN-LAST:event_rSButtonHover8ActionPerformed
+
+    private void rSButtonHover4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover4ActionPerformed
+        // TODO add your handling code here:
+        Loginpage login = new Loginpage();
+        login.show();
+        
+        dispose();
+    }//GEN-LAST:event_rSButtonHover4ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -301,7 +301,6 @@ public class Daily extends javax.swing.JFrame {
         jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(255, 102, 102));
         jTextField2.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
         jTextField2.setText("10,193");
         jTextField2.setBorder(null);
         panel4.add(jTextField2);
@@ -506,6 +505,10 @@ public class Daily extends javax.swing.JFrame {
 
     private void rSButtonHover9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover9ActionPerformed
         // TODO add your handling code here:
+        Loginpage login = new Loginpage();
+        login.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover9ActionPerformed
 
     private void rSButtonHover10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover10ActionPerformed
