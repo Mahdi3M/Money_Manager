@@ -93,6 +93,11 @@ public class Loginpage extends javax.swing.JFrame {
         rSButtonHover3.setText("Signup");
         rSButtonHover3.setColorText(new java.awt.Color(0, 181, 240));
         rSButtonHover3.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        rSButtonHover3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonHover3ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 181, 240));
@@ -206,6 +211,14 @@ public class Loginpage extends javax.swing.JFrame {
         
         dispose();
     }//GEN-LAST:event_rSButtonHover4ActionPerformed
+
+    private void rSButtonHover3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover3ActionPerformed
+        // TODO add your handling code here:
+        SignupPage signup = new SignupPage();
+        signup.show();
+        
+        dispose();
+    }//GEN-LAST:event_rSButtonHover3ActionPerformed
 
     /**
      * @param args the command line arguments

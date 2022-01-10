@@ -184,6 +184,11 @@ public class SignupPage extends javax.swing.JFrame {
         jLabel9.setText("Contact Number      :");
 
         rSButtonHover1.setText("SIGN UP");
+        rSButtonHover1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonHover1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -330,6 +335,14 @@ public class SignupPage extends javax.swing.JFrame {
         
         dispose();
     }//GEN-LAST:event_rSButtonHover4ActionPerformed
+
+    private void rSButtonHover1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover1ActionPerformed
+        // TODO add your handling code here:
+        Home home = new Home();
+        home.show();
+        
+        dispose();
+    }//GEN-LAST:event_rSButtonHover1ActionPerformed
 
     /**
      * @param args the command line arguments

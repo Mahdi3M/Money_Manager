@@ -700,10 +700,18 @@ public class Home extends javax.swing.JFrame {
 
     private void rSButtonHover19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover19ActionPerformed
         // TODO add your handling code here:
+        Reportpage expense = new Reportpage();
+        expense.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover19ActionPerformed
 
     private void rSButtonHover20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover20ActionPerformed
         // TODO add your handling code here:
+        Reportpagesavings savingpage = new Reportpagesavings();
+        savingpage.show();
+        
+        dispose();
     }//GEN-LAST:event_rSButtonHover20ActionPerformed
 
     /**
