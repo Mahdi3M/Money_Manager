@@ -4,7 +4,12 @@
  */
 package Interfaces;
 
+import java.sql.*;
 import java.awt.*;
+import java.time.LocalDate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -71,8 +76,6 @@ public class Daily extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         rSButtonHover4 = new rojerusan.RSButtonHover();
-        rSButtonHover5 = new rojerusan.RSButtonHover();
-        rSButtonHover6 = new rojerusan.RSButtonHover();
         rSButtonHover7 = new rojerusan.RSButtonHover();
         rSButtonHover8 = new rojerusan.RSButtonHover();
         rSButtonHover9 = new rojerusan.RSButtonHover();
@@ -90,16 +93,13 @@ public class Daily extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         panel5 = new java.awt.Panel();
         panel13 = new java.awt.Panel();
-        label3 = new java.awt.Label();
-        panel9 = new java.awt.Panel();
-        label4 = new java.awt.Label();
-        label5 = new java.awt.Label();
-        panel12 = new java.awt.Panel();
-        label6 = new java.awt.Label();
-        label7 = new java.awt.Label();
-        panel10 = new java.awt.Panel();
-        label8 = new java.awt.Label();
-        label9 = new java.awt.Label();
+        jPanel4 = new javax.swing.JPanel();
+        rSButtonHover16 = new rojerusan.RSButtonHover();
+        spent = new javax.swing.JTextField();
+        jPanel9 = new javax.swing.JPanel();
+        rSButtonHover21 = new rojerusan.RSButtonHover();
+        category = new javax.swing.JComboBox<>();
+        add = new javax.swing.JButton();
         panel2 = new java.awt.Panel();
         panel7 = new java.awt.Panel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -124,24 +124,6 @@ public class Daily extends javax.swing.JFrame {
         rSButtonHover4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSButtonHover4ActionPerformed(evt);
-            }
-        });
-
-        rSButtonHover5.setBackground(new java.awt.Color(153, 51, 0));
-        rSButtonHover5.setText("Filter");
-        rSButtonHover5.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover5ActionPerformed(evt);
-            }
-        });
-
-        rSButtonHover6.setBackground(new java.awt.Color(153, 51, 0));
-        rSButtonHover6.setText("Stats");
-        rSButtonHover6.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover6ActionPerformed(evt);
             }
         });
 
@@ -220,53 +202,44 @@ public class Daily extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(rSButtonHover10, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonHover4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rSButtonHover7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rSButtonHover5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rSButtonHover6, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rSButtonHover11, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(rSButtonHover13, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(52, Short.MAX_VALUE)
+                .addComponent(rSButtonHover10, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(rSButtonHover4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(rSButtonHover7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(rSButtonHover11, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(rSButtonHover13, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(rSButtonHover9, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(94, 94, 94)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(rSButtonHover12, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(rSButtonHover9, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 320, Short.MAX_VALUE)
-                        .addComponent(rSButtonHover12, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rSButtonHover10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rSButtonHover4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rSButtonHover7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rSButtonHover11, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rSButtonHover13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rSButtonHover9, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rSButtonHover12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rSButtonHover5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonHover6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonHover9, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonHover10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonHover7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonHover4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonHover11, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonHover13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.NORTH);
@@ -309,89 +282,108 @@ public class Daily extends javax.swing.JFrame {
 
         panel5.setBackground(new java.awt.Color(102, 102, 255));
         panel5.setPreferredSize(new java.awt.Dimension(300, 300));
-        java.awt.FlowLayout flowLayout1 = new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 20, 20);
+        java.awt.FlowLayout flowLayout1 = new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 10, 20);
         flowLayout1.setAlignOnBaseline(true);
         panel5.setLayout(flowLayout1);
 
         panel13.setBackground(new java.awt.Color(102, 102, 255));
         panel13.setPreferredSize(new java.awt.Dimension(260, 25));
 
-        label3.setBackground(new java.awt.Color(102, 102, 255));
-        label3.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        label3.setPreferredSize(new java.awt.Dimension(240, 20));
-        label3.setText("Each Categories");
-
         javax.swing.GroupLayout panel13Layout = new javax.swing.GroupLayout(panel13);
         panel13.setLayout(panel13Layout);
         panel13Layout.setHorizontalGroup(
             panel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel13Layout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 260, Short.MAX_VALUE)
         );
         panel13Layout.setVerticalGroup(
             panel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 25, Short.MAX_VALUE)
         );
 
         panel5.add(panel13);
 
-        panel9.setBackground(new java.awt.Color(0, 204, 102));
-        panel9.setPreferredSize(new java.awt.Dimension(120, 40));
-        java.awt.FlowLayout flowLayout3 = new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 0, 0);
-        flowLayout3.setAlignOnBaseline(true);
-        panel9.setLayout(flowLayout3);
+        jPanel4.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
 
-        label4.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        label4.setPreferredSize(new java.awt.Dimension(100, 20));
-        label4.setText("Food");
-        panel9.add(label4);
+        rSButtonHover16.setBackground(new java.awt.Color(204, 0, 51));
+        rSButtonHover16.setText("Spent");
+        rSButtonHover16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonHover16ActionPerformed(evt);
+            }
+        });
 
-        label5.setAlignment(java.awt.Label.RIGHT);
-        label5.setMinimumSize(new java.awt.Dimension(120, 20));
-        label5.setPreferredSize(new java.awt.Dimension(100, 20));
-        label5.setText("2000");
-        panel9.add(label5);
+        spent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                spentActionPerformed(evt);
+            }
+        });
 
-        panel5.add(panel9);
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(rSButtonHover16, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(spent, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rSButtonHover16, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                    .addComponent(spent, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
+        );
 
-        panel12.setBackground(new java.awt.Color(255, 153, 51));
-        panel12.setPreferredSize(new java.awt.Dimension(120, 40));
-        java.awt.FlowLayout flowLayout4 = new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 0, 0);
-        flowLayout4.setAlignOnBaseline(true);
-        panel12.setLayout(flowLayout4);
+        panel5.add(jPanel4);
 
-        label6.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        label6.setPreferredSize(new java.awt.Dimension(100, 20));
-        label6.setText("Entertainment");
-        panel12.add(label6);
+        jPanel9.setBackground(new java.awt.Color(102, 102, 255));
 
-        label7.setAlignment(java.awt.Label.RIGHT);
-        label7.setMinimumSize(new java.awt.Dimension(120, 20));
-        label7.setPreferredSize(new java.awt.Dimension(100, 20));
-        label7.setText("2,725");
-        panel12.add(label7);
+        rSButtonHover21.setBackground(new java.awt.Color(51, 0, 153));
+        rSButtonHover21.setText("Select Category");
+        rSButtonHover21.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        rSButtonHover21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonHover21ActionPerformed(evt);
+            }
+        });
 
-        panel5.add(panel12);
+        category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Food", "Entertainment", "Clothing" }));
 
-        panel10.setBackground(new java.awt.Color(255, 255, 0));
-        panel10.setPreferredSize(new java.awt.Dimension(120, 40));
-        java.awt.FlowLayout flowLayout5 = new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 0, 0);
-        flowLayout5.setAlignOnBaseline(true);
-        panel10.setLayout(flowLayout5);
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addComponent(rSButtonHover21, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(category, 0, 123, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonHover21, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
 
-        label8.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        label8.setPreferredSize(new java.awt.Dimension(100, 20));
-        label8.setText("Shopping");
-        panel10.add(label8);
+        panel5.add(jPanel9);
 
-        label9.setAlignment(java.awt.Label.RIGHT);
-        label9.setMinimumSize(new java.awt.Dimension(120, 20));
-        label9.setPreferredSize(new java.awt.Dimension(100, 20));
-        label9.setText("5,468");
-        panel10.add(label9);
-
-        panel5.add(panel10);
+        add.setBackground(new java.awt.Color(102, 102, 102));
+        add.setText("Add");
+        add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addActionPerformed(evt);
+            }
+        });
+        panel5.add(add);
 
         panel1.add(panel5, java.awt.BorderLayout.SOUTH);
 
@@ -476,22 +468,6 @@ public class Daily extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_rSButtonHover4ActionPerformed
 
-    private void rSButtonHover5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover5ActionPerformed
-        // TODO add your handling code here:
-        Filter filter = new Filter();
-        filter.show();
-        
-        dispose();
-    }//GEN-LAST:event_rSButtonHover5ActionPerformed
-
-    private void rSButtonHover6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover6ActionPerformed
-        // TODO add your handling code here:
-        Statistics stats = new Statistics();
-        stats.show();
-        
-        dispose();
-    }//GEN-LAST:event_rSButtonHover6ActionPerformed
-
     private void rSButtonHover7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rSButtonHover7ActionPerformed
@@ -550,6 +526,47 @@ public class Daily extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rSButtonHover18ActionPerformed
 
+    private void rSButtonHover16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSButtonHover16ActionPerformed
+
+    private void spentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_spentActionPerformed
+
+    private void rSButtonHover21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover21ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSButtonHover21ActionPerformed
+
+    Connection con1;
+    PreparedStatement insert;
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
+        // TODO add your handling code here:
+        Double exp = Double.parseDouble(spent.getText());
+        String cat = category.getSelectedItem().toString();
+        Date date = Date.valueOf(LocalDate.MAX);
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con1 = DriverManager.getConnection("jdbc:mysql://127.0.0.1/Money_Manager","root","");
+            insert = con1.prepareStatement("insert into record(Date, Category, Expense, Comment)values(?,?,?,?)");
+            insert.setDate(1, date);
+            insert.setString(2, cat);
+            insert.setDouble(3, exp);
+            insert.setString(4, "No Comment");
+            insert.executeUpdate();
+            
+            JOptionPane.showMessageDialog(this, "Record Added");
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Daily.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        catch (SQLException ex) {
+            Logger.getLogger(Daily.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_addActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -586,24 +603,19 @@ public class Daily extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton add;
+    private javax.swing.JComboBox<String> category;
     private datechooser.beans.DateChooserCombo dateChooserCombo1;
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField2;
     private java.awt.Label label1;
     private java.awt.Label label2;
-    private java.awt.Label label3;
-    private java.awt.Label label4;
-    private java.awt.Label label5;
-    private java.awt.Label label6;
-    private java.awt.Label label7;
-    private java.awt.Label label8;
-    private java.awt.Label label9;
     private java.awt.Panel panel1;
-    private java.awt.Panel panel10;
-    private java.awt.Panel panel12;
     private java.awt.Panel panel13;
     private java.awt.Panel panel2;
     private java.awt.Panel panel3;
@@ -611,19 +623,19 @@ public class Daily extends javax.swing.JFrame {
     private java.awt.Panel panel5;
     private java.awt.Panel panel6;
     private java.awt.Panel panel7;
-    private java.awt.Panel panel9;
     private java.awt.Panel panelBarChart;
     private rojerusan.RSButtonHover rSButtonHover10;
     private rojerusan.RSButtonHover rSButtonHover11;
     private rojerusan.RSButtonHover rSButtonHover12;
     private rojerusan.RSButtonHover rSButtonHover13;
+    private rojerusan.RSButtonHover rSButtonHover16;
     private rojerusan.RSButtonHover rSButtonHover18;
+    private rojerusan.RSButtonHover rSButtonHover21;
     private rojerusan.RSButtonHover rSButtonHover29;
     private rojerusan.RSButtonHover rSButtonHover4;
-    private rojerusan.RSButtonHover rSButtonHover5;
-    private rojerusan.RSButtonHover rSButtonHover6;
     private rojerusan.RSButtonHover rSButtonHover7;
     private rojerusan.RSButtonHover rSButtonHover8;
     private rojerusan.RSButtonHover rSButtonHover9;
+    private javax.swing.JTextField spent;
     // End of variables declaration//GEN-END:variables
 }
