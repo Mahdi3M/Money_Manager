@@ -4,6 +4,14 @@
  */
 package Interfaces;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import java.text.SimpleDateFormat;
+
 /**
  *
  * @author asus
@@ -40,16 +48,16 @@ public class SignupPage extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
+        LastName = new javax.swing.JTextField();
+        UserName = new javax.swing.JTextField();
+        FirstName = new javax.swing.JTextField();
+        ContactNumber = new javax.swing.JTextField();
+        Password = new javax.swing.JPasswordField();
+        ConfirmPassword = new javax.swing.JPasswordField();
+        DateSelector = new datechooser.beans.DateChooserCombo();
         jLabel9 = new javax.swing.JLabel();
         rSButtonHover1 = new rojerusan.RSButtonHover();
-        rSButtonHover4 = new rojerusan.RSButtonHover();
+        Login = new rojerusan.RSButtonHover();
         rSButtonHover8 = new rojerusan.RSButtonHover();
 
         jTextField5.setFont(new java.awt.Font("Segoe UI Light", 0, 20)); // NOI18N
@@ -147,35 +155,35 @@ public class SignupPage extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Confirm Password   :");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        LastName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                LastNameActionPerformed(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        UserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                UserNameActionPerformed(evt);
             }
         });
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        FirstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                FirstNameActionPerformed(evt);
             }
         });
 
-        jTextField6.setPreferredSize(new java.awt.Dimension(7, 25));
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        ContactNumber.setPreferredSize(new java.awt.Dimension(7, 25));
+        ContactNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                ContactNumberActionPerformed(evt);
             }
         });
 
-        jPasswordField2.setPreferredSize(new java.awt.Dimension(7, 25));
-        jPasswordField2.addActionListener(new java.awt.event.ActionListener() {
+        ConfirmPassword.setPreferredSize(new java.awt.Dimension(7, 25));
+        ConfirmPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField2ActionPerformed(evt);
+                ConfirmPasswordActionPerformed(evt);
             }
         });
 
@@ -207,13 +215,13 @@ public class SignupPage extends javax.swing.JFrame {
                         .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField4)
-                    .addComponent(jTextField3)
-                    .addComponent(jPasswordField1)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(dateChooserCombo1, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE))
+                    .addComponent(LastName)
+                    .addComponent(FirstName)
+                    .addComponent(UserName)
+                    .addComponent(Password)
+                    .addComponent(ContactNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ConfirmPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DateSelector, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -226,31 +234,31 @@ public class SignupPage extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField4))
+                    .addComponent(FirstName))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1))
+                    .addComponent(LastName))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField3))
+                    .addComponent(UserName))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPasswordField1))
+                    .addComponent(Password))
                 .addGap(22, 22, 22)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ConfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(ContactNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(dateChooserCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DateSelector, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(rSButtonHover1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
@@ -258,18 +266,18 @@ public class SignupPage extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 530, 460));
 
-        rSButtonHover4.setBackground(new java.awt.Color(153, 0, 0));
-        rSButtonHover4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 181, 240)));
-        rSButtonHover4.setForeground(new java.awt.Color(0, 181, 240));
-        rSButtonHover4.setText("Login");
-        rSButtonHover4.setColorText(new java.awt.Color(0, 181, 240));
-        rSButtonHover4.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
-        rSButtonHover4.addActionListener(new java.awt.event.ActionListener() {
+        Login.setBackground(new java.awt.Color(153, 0, 0));
+        Login.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 181, 240)));
+        Login.setForeground(new java.awt.Color(0, 181, 240));
+        Login.setText("Login");
+        Login.setColorText(new java.awt.Color(0, 181, 240));
+        Login.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover4ActionPerformed(evt);
+                LoginActionPerformed(evt);
             }
         });
-        getContentPane().add(rSButtonHover4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 90, 25));
+        getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 90, 25));
 
         rSButtonHover8.setBackground(new java.awt.Color(153, 51, 0));
         rSButtonHover8.setText("X");
@@ -301,25 +309,25 @@ public class SignupPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void FirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_FirstNameActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void UserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_UserNameActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void LastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LastNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_LastNameActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void ContactNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactNumberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_ContactNumberActionPerformed
 
-    private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2ActionPerformed
+    private void ConfirmPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField2ActionPerformed
+    }//GEN-LAST:event_ConfirmPasswordActionPerformed
 
     private void rSButtonHover8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover8ActionPerformed
 
@@ -328,21 +336,68 @@ public class SignupPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rSButtonHover8ActionPerformed
 
-    private void rSButtonHover4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover4ActionPerformed
-        // TODO add your handling code here:
-        Loginpage login = new Loginpage();
-        login.show();
-        
-        dispose();
-    }//GEN-LAST:event_rSButtonHover4ActionPerformed
-
     private void rSButtonHover1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover1ActionPerformed
         // TODO add your handling code here:
-        Home home = new Home();
-        home.show();
         
+        
+        String first = FirstName.getText();
+        String last = LastName.getText();
+        String user = UserName.getText();
+        String pass = Password.getText();
+        String confirmpass = ConfirmPassword.getText();
+        String contact = ContactNumber.getText();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String date = sdf.format(DateSelector.getSelectedDate().getTime());
+        //jLabel1.setText(date);
+        
+        
+
+        if ("".equals(first) || "".equals(last) || "".equals(user) || "".equals(pass) || "".equals(confirmpass) || "".equals(contact) || "".equals(date)) {
+            JFrame f = new JFrame();
+            JOptionPane.showMessageDialog(f, "Form isn't completed");
+
+        } 
+        
+        else {
+            try {
+                try (FileWriter fw = new FileWriter("src\\Database.csv", true)) {
+                    fw.write(first + "," + last + "," + user + "," + pass + "," + confirmpass + "," + contact + "," + date+"\n");
+                     try (FileWriter fw1 = new FileWriter("src\\Login.csv", true)){
+                         fw1.write(user+","+pass+"\n");
+                         fw1.close();
+                     }
+                    fw.close();
+                }
+                Home home = new Home();
+                home.show();
+            } catch (IOException ex) {
+                Logger.getLogger(SignupPage.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
         dispose();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_rSButtonHover1ActionPerformed
+
+    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
+        // TODO add your handling code here:
+        
+        
+        Loginpage login = new Loginpage();
+        login.show();
+
+        dispose();
+    }//GEN-LAST:event_LoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -383,7 +438,14 @@ public class SignupPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private datechooser.beans.DateChooserCombo dateChooserCombo1;
+    private javax.swing.JPasswordField ConfirmPassword;
+    private javax.swing.JTextField ContactNumber;
+    private datechooser.beans.DateChooserCombo DateSelector;
+    private javax.swing.JTextField FirstName;
+    private javax.swing.JTextField LastName;
+    private rojerusan.RSButtonHover Login;
+    private javax.swing.JPasswordField Password;
+    private javax.swing.JTextField UserName;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -395,18 +457,11 @@ public class SignupPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private rojerusan.RSButtonHover rSButtonHover1;
-    private rojerusan.RSButtonHover rSButtonHover4;
     private rojerusan.RSButtonHover rSButtonHover8;
     // End of variables declaration//GEN-END:variables
 }

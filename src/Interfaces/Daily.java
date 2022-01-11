@@ -4,9 +4,10 @@
  */
 package Interfaces;
 
-import java.sql.*;
 import java.awt.*;
+import java.io.*;
 import java.time.LocalDate;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -37,9 +38,9 @@ public class Daily extends javax.swing.JFrame {
         
         //create dataset
       DefaultPieDataset barDataset = new DefaultPieDataset( );
-      barDataset.setValue( "Food" , new Double (2000) );  
+      barDataset.setValue( "Shopping" , new Double (2000) );  
       barDataset.setValue( "Entertainment" , new Double (2725) );   
-      barDataset.setValue( "Shopping" , new Double (5468) );
+      barDataset.setValue( "Food" , new Double (5468) );
       
       //create chart
        JFreeChart piechart = ChartFactory.createPieChart("",barDataset, false,true,false);//explain
@@ -47,9 +48,9 @@ public class Daily extends javax.swing.JFrame {
         PiePlot piePlot =(PiePlot) piechart.getPlot();
       
        //changing pie chart blocks colors
-       piePlot.setSectionPaint("Food", new Color(0,204,102));
-        piePlot.setSectionPaint("Entertainment", new Color(255,153,51));
-        piePlot.setSectionPaint("Shopping", new Color(255,255,0));
+       piePlot.setSectionPaint("Shopping", new Color(0,204,102));
+        piePlot.setSectionPaint("Clothing", new Color(255,153,51));
+        piePlot.setSectionPaint("Food", new Color(255,255,0));
       
        
         piePlot.setBackgroundPaint(new Color(153,153,255));
@@ -90,7 +91,7 @@ public class Daily extends javax.swing.JFrame {
         dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
         panel4 = new java.awt.Panel();
         label2 = new java.awt.Label();
-        jTextField2 = new javax.swing.JTextField();
+        showTotal = new javax.swing.JButton();
         panel5 = new java.awt.Panel();
         panel13 = new java.awt.Panel();
         jPanel4 = new javax.swing.JPanel();
@@ -102,11 +103,8 @@ public class Daily extends javax.swing.JFrame {
         add = new javax.swing.JButton();
         panel2 = new java.awt.Panel();
         panel7 = new java.awt.Panel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        panel6 = new java.awt.Panel();
-        rSButtonHover29 = new rojerusan.RSButtonHover();
-        rSButtonHover18 = new rojerusan.RSButtonHover();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        data_table = new javax.swing.JTable();
         panelBarChart = new java.awt.Panel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -271,12 +269,15 @@ public class Daily extends javax.swing.JFrame {
         label2.setText("Total Money Spent");
         panel4.add(label2);
 
-        jTextField2.setEditable(false);
-        jTextField2.setBackground(new java.awt.Color(255, 102, 102));
-        jTextField2.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jTextField2.setText("10,193");
-        jTextField2.setBorder(null);
-        panel4.add(jTextField2);
+        showTotal.setBackground(new java.awt.Color(255, 102, 102));
+        showTotal.setText("Show");
+        showTotal.setPreferredSize(new java.awt.Dimension(100, 30));
+        showTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showTotalActionPerformed(evt);
+            }
+        });
+        panel4.add(showTotal);
 
         panel1.add(panel4, java.awt.BorderLayout.CENTER);
 
@@ -394,60 +395,33 @@ public class Daily extends javax.swing.JFrame {
         panel7.setPreferredSize(new java.awt.Dimension(484, 250));
         panel7.setLayout(new java.awt.BorderLayout());
 
-        jTable1.setBackground(new java.awt.Color(0, 51, 0));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        data_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", null, null, null, null, null, null},
-                {"2", null, null, null, null, null, null},
-                {"3", null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Ser", "Date", "Expense", "Category", "Comment", "Edit", "Delete"
+                "Ser", "Category", "Expense"
             }
         ));
-        jTable1.setGridColor(new java.awt.Color(0, 51, 0));
-        jTable1.setPreferredSize(new java.awt.Dimension(484, 0));
-        jTable1.setSelectionForeground(new java.awt.Color(0, 51, 0));
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setPreferredWidth(10);
-            jTable1.getColumnModel().getColumn(1).setPreferredWidth(75);
-            jTable1.getColumnModel().getColumn(2).setPreferredWidth(75);
-            jTable1.getColumnModel().getColumn(3).setPreferredWidth(75);
-            jTable1.getColumnModel().getColumn(4).setPreferredWidth(100);
-            jTable1.getColumnModel().getColumn(5).setPreferredWidth(20);
-            jTable1.getColumnModel().getColumn(6).setPreferredWidth(20);
+        jScrollPane2.setViewportView(data_table);
+        if (data_table.getColumnModel().getColumnCount() > 0) {
+            data_table.getColumnModel().getColumn(0).setPreferredWidth(20);
         }
 
-        panel7.add(jScrollPane1, java.awt.BorderLayout.CENTER);
-
-        panel6.setPreferredSize(new java.awt.Dimension(527, 30));
-        panel6.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 10, 5));
-
-        rSButtonHover29.setBackground(new java.awt.Color(153, 0, 0));
-        rSButtonHover29.setText("Export to Excel");
-        rSButtonHover29.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover29.setPreferredSize(new java.awt.Dimension(150, 20));
-        rSButtonHover29.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover29ActionPerformed(evt);
-            }
-        });
-        panel6.add(rSButtonHover29);
-
-        rSButtonHover18.setBackground(new java.awt.Color(153, 0, 0));
-        rSButtonHover18.setText("Print");
-        rSButtonHover18.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover18.setPreferredSize(new java.awt.Dimension(150, 20));
-        rSButtonHover18.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover18ActionPerformed(evt);
-            }
-        });
-        panel6.add(rSButtonHover18);
-
-        panel7.add(panel6, java.awt.BorderLayout.SOUTH);
+        panel7.add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
         panel2.add(panel7, java.awt.BorderLayout.SOUTH);
 
@@ -518,14 +492,6 @@ public class Daily extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void rSButtonHover29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover29ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSButtonHover29ActionPerformed
-
-    private void rSButtonHover18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSButtonHover18ActionPerformed
-
     private void rSButtonHover16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover16ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rSButtonHover16ActionPerformed
@@ -538,38 +504,88 @@ public class Daily extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rSButtonHover21ActionPerformed
 
-    Connection con1;
-    PreparedStatement insert;
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         // TODO add your handling code here:
         Double exp = Double.parseDouble(spent.getText());
         String cat = category.getSelectedItem().toString();
-        Date date = Date.valueOf(LocalDate.MAX);
         
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con1 = DriverManager.getConnection("jdbc:mysql://127.0.0.1/Money_Manager","root","");
-            insert = con1.prepareStatement("insert into record(Date, Category, Expense, Comment)values(?,?,?,?)");
-            insert.setDate(1, date);
-            insert.setString(2, cat);
-            insert.setDouble(3, exp);
-            insert.setString(4, "No Comment");
-            insert.executeUpdate();
+            try (FileWriter fw = new FileWriter("src\\Database_Daily.csv", true)) {
+                    fw.write("\n" + 1 + "," + "Ayon" + "," + "4321" + "," + "1/11/2022" + "," + 40000 + "," + cat + "," + exp);
+                    fw.close();
+                }
             
-            JOptionPane.showMessageDialog(this, "Record Added");
             
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Daily.class.getName()).log(Level.SEVERE, null, ex);
+        }catch (IOException ex) {
+                Logger.getLogger(Daily.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        catch (SQLException ex) {
+        try {
+            // TODO add your handling code here:
+            Scanner input = new Scanner(new FileReader("src\\Database_Daily.csv"));
+            String line= input.nextLine();
+        
+            double total=0;
+            Integer cnt=0;
+            while(input.hasNextLine()){
+                line =  input.nextLine();
+                String[] arr = line.split(",");
+                Double expense = Double.parseDouble(arr[6]);
+                String category = arr[5];
+                
+                total += expense;
+                
+                data_table.setValueAt(cnt+1, cnt, 0);
+                data_table.setValueAt(category, cnt, 1);
+                data_table.setValueAt(expense, cnt, 2);
+                cnt++;
+            }
+
+            
+                t = Double.toString(total);
+                showTotal.setText(t);
+        } catch (FileNotFoundException ex) {
             Logger.getLogger(Daily.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_addActionPerformed
 
+    private void showTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showTotalActionPerformed
+        // TODO add your handling code here:
+               
+        try {
+            // TODO add your handling code here:
+            Scanner input = new Scanner(new FileReader("src\\Database_Daily.csv"));
+            String line= input.nextLine();
+        
+            double total=0;
+            Integer cnt=0;
+            while(input.hasNextLine()){
+                line =  input.nextLine();
+                String[] arr = line.split(",");
+                Double expense = Double.parseDouble(arr[6]);
+                String category = arr[5];
+                
+                total += expense;
+                
+                data_table.setValueAt(cnt+1, cnt, 0);
+                data_table.setValueAt(category, cnt, 1);
+                data_table.setValueAt(expense, cnt, 2);
+                cnt++;
+            }
+
+            
+                t = Double.toString(total);
+                showTotal.setText(t);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Daily.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    }//GEN-LAST:event_showTotalActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    static String t;
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -600,19 +616,19 @@ public class Daily extends javax.swing.JFrame {
                 new Daily().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton add;
     private javax.swing.JComboBox<String> category;
+    private javax.swing.JTable data_table;
     private datechooser.beans.DateChooserCombo dateChooserCombo1;
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JScrollPane jScrollPane2;
     private java.awt.Label label1;
     private java.awt.Label label2;
     private java.awt.Panel panel1;
@@ -621,7 +637,6 @@ public class Daily extends javax.swing.JFrame {
     private java.awt.Panel panel3;
     private java.awt.Panel panel4;
     private java.awt.Panel panel5;
-    private java.awt.Panel panel6;
     private java.awt.Panel panel7;
     private java.awt.Panel panelBarChart;
     private rojerusan.RSButtonHover rSButtonHover10;
@@ -629,13 +644,12 @@ public class Daily extends javax.swing.JFrame {
     private rojerusan.RSButtonHover rSButtonHover12;
     private rojerusan.RSButtonHover rSButtonHover13;
     private rojerusan.RSButtonHover rSButtonHover16;
-    private rojerusan.RSButtonHover rSButtonHover18;
     private rojerusan.RSButtonHover rSButtonHover21;
-    private rojerusan.RSButtonHover rSButtonHover29;
     private rojerusan.RSButtonHover rSButtonHover4;
     private rojerusan.RSButtonHover rSButtonHover7;
     private rojerusan.RSButtonHover rSButtonHover8;
     private rojerusan.RSButtonHover rSButtonHover9;
+    private javax.swing.JButton showTotal;
     private javax.swing.JTextField spent;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,12 @@
 package Interfaces;
 
 import java.awt.*;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -34,8 +40,6 @@ public class Settings extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         rSButtonHover4 = new rojerusan.RSButtonHover();
-        rSButtonHover5 = new rojerusan.RSButtonHover();
-        rSButtonHover6 = new rojerusan.RSButtonHover();
         rSButtonHover7 = new rojerusan.RSButtonHover();
         rSButtonHover8 = new rojerusan.RSButtonHover();
         rSButtonHover9 = new rojerusan.RSButtonHover();
@@ -66,18 +70,12 @@ public class Settings extends javax.swing.JFrame {
         label2 = new java.awt.Label();
         panel1 = new java.awt.Panel();
         panel4 = new java.awt.Panel();
-        label3 = new java.awt.Label();
         label4 = new java.awt.Label();
         label7 = new java.awt.Label();
-        label5 = new java.awt.Label();
-        label6 = new java.awt.Label();
         panel6 = new java.awt.Panel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField2 = new javax.swing.JTextField();
-        jButton9 = new javax.swing.JButton();
+        Acc1 = new javax.swing.JTextField();
+        Acc2 = new javax.swing.JTextField();
+        Save = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Settings");
@@ -95,24 +93,6 @@ public class Settings extends javax.swing.JFrame {
         rSButtonHover4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSButtonHover4ActionPerformed(evt);
-            }
-        });
-
-        rSButtonHover5.setBackground(new java.awt.Color(153, 51, 0));
-        rSButtonHover5.setText("Filter");
-        rSButtonHover5.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover5ActionPerformed(evt);
-            }
-        });
-
-        rSButtonHover6.setBackground(new java.awt.Color(153, 51, 0));
-        rSButtonHover6.setText("Stats");
-        rSButtonHover6.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover6ActionPerformed(evt);
             }
         });
 
@@ -191,33 +171,24 @@ public class Settings extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton10)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(rSButtonHover10, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonHover4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rSButtonHover7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rSButtonHover5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rSButtonHover6, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rSButtonHover11, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(rSButtonHover13, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32)
+                .addComponent(rSButtonHover10, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(rSButtonHover9, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(rSButtonHover12, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addComponent(rSButtonHover4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rSButtonHover7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rSButtonHover11, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rSButtonHover13, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rSButtonHover9, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(jButton10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(rSButtonHover12, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,17 +198,17 @@ public class Settings extends javax.swing.JFrame {
                         .addComponent(rSButtonHover12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 14, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rSButtonHover5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonHover6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonHover9, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonHover10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rSButtonHover7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rSButtonHover4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonHover10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rSButtonHover11, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonHover13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(rSButtonHover13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonHover9, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.NORTH);
@@ -343,9 +314,9 @@ public class Settings extends javax.swing.JFrame {
         panel2.setLayout(new javax.swing.BoxLayout(panel2, javax.swing.BoxLayout.LINE_AXIS));
 
         label2.setAlignment(java.awt.Label.CENTER);
-        label2.setFont(new java.awt.Font("Arial", 1, 30)); // NOI18N
+        label2.setFont(new java.awt.Font("Arial", 1, 27)); // NOI18N
         label2.setForeground(new java.awt.Color(204, 204, 204));
-        label2.setText("Change Your Settings Here");
+        label2.setText("Update Your Informations Here");
         panel2.add(label2);
 
         User_Settings.add(panel2, java.awt.BorderLayout.NORTH);
@@ -356,42 +327,33 @@ public class Settings extends javax.swing.JFrame {
         panel4.setPreferredSize(new java.awt.Dimension(120, 120));
         panel4.setLayout(new java.awt.GridLayout(5, 1));
 
-        label3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        label3.setText("Username");
-        panel4.add(label3);
-
         label4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        label4.setText("Password");
+        label4.setText("Account-1 Balance");
         panel4.add(label4);
 
         label7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        label7.setText("Rewrite Password");
+        label7.setText("Account-2 Balance");
         panel4.add(label7);
-
-        label5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        label5.setText("Select Currency");
-        panel4.add(label5);
-
-        label6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        label6.setText("Credit Card");
-        panel4.add(label6);
 
         panel6.setBackground(new java.awt.Color(102, 102, 102));
         panel6.setForeground(new java.awt.Color(102, 102, 102));
         panel6.setLayout(new java.awt.GridLayout(5, 1));
 
-        jTextField1.setAutoscrolls(false);
-        jTextField1.setVerifyInputWhenFocusTarget(false);
-        panel6.add(jTextField1);
-        panel6.add(jPasswordField1);
-        panel6.add(jPasswordField2);
+        Acc1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Acc1ActionPerformed(evt);
+            }
+        });
+        panel6.add(Acc1);
+        panel6.add(Acc2);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Taka", "Dollars" }));
-        panel6.add(jComboBox1);
-        panel6.add(jTextField2);
-
-        jButton9.setBackground(new java.awt.Color(204, 204, 204));
-        jButton9.setText("Save");
+        Save.setBackground(new java.awt.Color(204, 204, 204));
+        Save.setText("Save");
+        Save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
@@ -401,7 +363,7 @@ public class Settings extends javax.swing.JFrame {
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addGap(198, 198, 198)
-                        .addComponent(jButton9))
+                        .addComponent(Save))
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(panel4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -417,7 +379,7 @@ public class Settings extends javax.swing.JFrame {
                     .addComponent(panel4, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
                     .addComponent(panel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton9)
+                .addComponent(Save)
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
@@ -437,22 +399,6 @@ public class Settings extends javax.swing.JFrame {
         
         dispose();
     }//GEN-LAST:event_rSButtonHover4ActionPerformed
-
-    private void rSButtonHover5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover5ActionPerformed
-        // TODO add your handling code here:
-        Filter filter = new Filter();
-        filter.show();
-        
-        dispose();
-    }//GEN-LAST:event_rSButtonHover5ActionPerformed
-
-    private void rSButtonHover6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover6ActionPerformed
-        // TODO add your handling code here:
-        Statistics stats = new Statistics();
-        stats.show();
-        
-        dispose();
-    }//GEN-LAST:event_rSButtonHover6ActionPerformed
 
     private void rSButtonHover7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover7ActionPerformed
         // TODO add your handling code here:
@@ -509,6 +455,42 @@ public class Settings extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
 
+    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
+        
+        String acc1 = Acc1.getText();
+        String acc2 = Acc2.getText();
+        
+        if ("".equals(acc1) || "".equals(acc2)) {
+            JFrame f = new JFrame();
+            JOptionPane.showMessageDialog(f, "Form isn't completed");
+        } 
+        
+        
+        else {
+            try {
+                try (FileWriter fw = new FileWriter("src\\Settings.csv", true)) {
+                    fw.write(acc1 + "," + acc2 + "\n");
+                    fw.close();
+                }
+                Home home = new Home();
+                home.setVisible(true);
+                dispose();
+            } catch (IOException ex) {
+                Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_SaveActionPerformed
+
+    private void Acc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Acc1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Acc1ActionPerformed
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -545,17 +527,18 @@ public class Settings extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Acc1;
+    private javax.swing.JTextField Acc2;
     private java.awt.Panel Body;
     private java.awt.Panel Info;
     private javax.swing.JLabel Mahdi_Pic;
     private java.awt.Panel Picture;
     private java.awt.Panel Profile;
+    private javax.swing.JButton Save;
     private java.awt.Panel User_Info;
     private java.awt.Panel User_Settings;
     private java.awt.Label Welcome;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -567,15 +550,8 @@ public class Settings extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private java.awt.Label label2;
-    private java.awt.Label label3;
     private java.awt.Label label4;
-    private java.awt.Label label5;
-    private java.awt.Label label6;
     private java.awt.Label label7;
     private java.awt.Panel panel1;
     private java.awt.Panel panel2;
@@ -586,8 +562,6 @@ public class Settings extends javax.swing.JFrame {
     private rojerusan.RSButtonHover rSButtonHover12;
     private rojerusan.RSButtonHover rSButtonHover13;
     private rojerusan.RSButtonHover rSButtonHover4;
-    private rojerusan.RSButtonHover rSButtonHover5;
-    private rojerusan.RSButtonHover rSButtonHover6;
     private rojerusan.RSButtonHover rSButtonHover7;
     private rojerusan.RSButtonHover rSButtonHover8;
     private rojerusan.RSButtonHover rSButtonHover9;

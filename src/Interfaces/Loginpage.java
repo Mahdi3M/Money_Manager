@@ -4,6 +4,18 @@
  */
 package Interfaces;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.*;
+import java.util.*;
+import javax.swing.*;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author asus
@@ -30,16 +42,16 @@ public class Loginpage extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        rSButtonHover4 = new rojerusan.RSButtonHover();
-        rSButtonHover3 = new rojerusan.RSButtonHover();
+        UserName = new javax.swing.JTextField();
+        PassWord = new javax.swing.JTextField();
+        Login = new rojerusan.RSButtonHover();
+        SignUp = new rojerusan.RSButtonHover();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        rSButtonHover8 = new rojerusan.RSButtonHover();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -55,47 +67,47 @@ public class Loginpage extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(0, 181, 240));
         jLabel7.setText("Login");
 
-        jTextField4.setFont(new java.awt.Font("Segoe UI Light", 0, 20)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField4.setText("Enter Username....");
-        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        UserName.setFont(new java.awt.Font("Segoe UI Light", 0, 20)); // NOI18N
+        UserName.setForeground(new java.awt.Color(102, 102, 102));
+        UserName.setText("Enter Username....");
+        UserName.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        UserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                UserNameActionPerformed(evt);
             }
         });
 
-        jTextField3.setFont(new java.awt.Font("Segoe UI Light", 0, 20)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField3.setText("Enter Password....");
-        jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        PassWord.setFont(new java.awt.Font("Segoe UI Light", 0, 20)); // NOI18N
+        PassWord.setForeground(new java.awt.Color(102, 102, 102));
+        PassWord.setText("Enter Password....");
+        PassWord.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        PassWord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                PassWordActionPerformed(evt);
             }
         });
 
-        rSButtonHover4.setBackground(new java.awt.Color(255, 255, 255));
-        rSButtonHover4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 181, 240)));
-        rSButtonHover4.setForeground(new java.awt.Color(0, 181, 240));
-        rSButtonHover4.setText("Login");
-        rSButtonHover4.setColorText(new java.awt.Color(0, 181, 240));
-        rSButtonHover4.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
-        rSButtonHover4.addActionListener(new java.awt.event.ActionListener() {
+        Login.setBackground(new java.awt.Color(255, 255, 255));
+        Login.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 181, 240)));
+        Login.setForeground(new java.awt.Color(0, 181, 240));
+        Login.setText("Login");
+        Login.setColorText(new java.awt.Color(0, 181, 240));
+        Login.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover4ActionPerformed(evt);
+                LoginActionPerformed(evt);
             }
         });
 
-        rSButtonHover3.setBackground(new java.awt.Color(255, 255, 255));
-        rSButtonHover3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 181, 240)));
-        rSButtonHover3.setForeground(new java.awt.Color(0, 181, 240));
-        rSButtonHover3.setText("Signup");
-        rSButtonHover3.setColorText(new java.awt.Color(0, 181, 240));
-        rSButtonHover3.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
-        rSButtonHover3.addActionListener(new java.awt.event.ActionListener() {
+        SignUp.setBackground(new java.awt.Color(255, 255, 255));
+        SignUp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 181, 240)));
+        SignUp.setForeground(new java.awt.Color(0, 181, 240));
+        SignUp.setText("Signup");
+        SignUp.setColorText(new java.awt.Color(0, 181, 240));
+        SignUp.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        SignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover3ActionPerformed(evt);
+                SignUpActionPerformed(evt);
             }
         });
 
@@ -109,36 +121,38 @@ public class Loginpage extends javax.swing.JFrame {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/twitter (1).png"))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 181, 240));
-        jLabel1.setText("X");
-
         jLabel4.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 181, 240));
         jLabel4.setText("or Login with");
+
+        rSButtonHover8.setBackground(new java.awt.Color(153, 51, 0));
+        rSButtonHover8.setText("X");
+        rSButtonHover8.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        rSButtonHover8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonHover8ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(758, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(36, 36, 36)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(PassWord, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(rSButtonHover4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(46, 46, 46)
-                                            .addComponent(rSButtonHover3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(SignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -149,8 +163,11 @@ public class Loginpage extends javax.swing.JFrame {
                                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(163, 163, 163)
-                                .addComponent(jLabel7)))))
-                .addContainerGap())
+                                .addComponent(jLabel7)))
+                        .addContainerGap(65, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 131, Short.MAX_VALUE)
@@ -160,20 +177,19 @@ public class Loginpage extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66)
                 .addComponent(jLabel7)
                 .addGap(30, 30, 30)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PassWord, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rSButtonHover3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSButtonHover4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(SignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(38, 38, 38)
@@ -184,7 +200,7 @@ public class Loginpage extends javax.swing.JFrame {
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 14, Short.MAX_VALUE))
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(20, 405, Short.MAX_VALUE)
@@ -196,29 +212,81 @@ public class Loginpage extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void UserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_UserNameActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void PassWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassWordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_PassWordActionPerformed
 
-    private void rSButtonHover4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover4ActionPerformed
+    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
         // TODO add your handling code here:                                                
-        Home home = new Home();
-        home.show();
         
-        dispose();
-    }//GEN-LAST:event_rSButtonHover4ActionPerformed
+        
+            
+            
+        String user = UserName.getText();
+        String pass = PassWord.getText();
+        Home home = new Home();;
 
-    private void rSButtonHover3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover3ActionPerformed
+        if ("".equals(user)) {
+            JFrame f = new JFrame();
+            JOptionPane.showMessageDialog(f, "User Name box is empty");
+            return;
+        } else if ("".equals(pass)) {
+            JFrame f = new JFrame();
+            JOptionPane.showMessageDialog(f, "Password is empty");
+            return;
+        }
+
+        try {
+            FileReader fr = new FileReader("src\\Login.csv");
+            BufferedReader br = new BufferedReader(fr);
+
+            //FileReader ffr=new FileReader("src\\database.txt");
+            //BufferedReader bfr=new BufferedReader(ffr);
+
+            String line;
+            Boolean matched = false;
+            while ((line = br.readLine()) != null) {
+                String[] arr = line.split(",");
+                if (user.equals(arr[0]) && pass.equals(arr[1])) {
+                    matched=true;
+                    break;
+                }
+            }
+
+            if (matched) {
+                home.show();
+                dispose();
+            } 
+            else if (!matched) {
+                JFrame f = new JFrame();
+                JOptionPane.showMessageDialog(f, "User Name Or Password isn't correct");
+            }
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Loginpage.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Loginpage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        dispose();
+    }//GEN-LAST:event_LoginActionPerformed
+
+    private void SignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpActionPerformed
         // TODO add your handling code here:
         SignupPage signup = new SignupPage();
         signup.show();
-        
         dispose();
-    }//GEN-LAST:event_rSButtonHover3ActionPerformed
+    }//GEN-LAST:event_SignUpActionPerformed
+
+    private void rSButtonHover8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover8ActionPerformed
+
+        // TODO add your handling code here:
+        System.exit(0);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSButtonHover8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,19 +325,19 @@ public class Loginpage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private rojerusan.RSButtonHover Login;
+    private javax.swing.JTextField PassWord;
+    private rojerusan.RSButtonHover SignUp;
+    private javax.swing.JTextField UserName;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private rojerusan.RSButtonHover rSButtonHover3;
-    private rojerusan.RSButtonHover rSButtonHover4;
+    private rojerusan.RSButtonHover rSButtonHover8;
     // End of variables declaration//GEN-END:variables
 }
