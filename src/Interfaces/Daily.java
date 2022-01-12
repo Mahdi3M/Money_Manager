@@ -76,24 +76,16 @@ public class Daily extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        panelBarChart = new java.awt.Panel();
+        jPanel2 = new javax.swing.JPanel();
         rSButtonHover4 = new rojerusan.RSButtonHover();
         rSButtonHover7 = new rojerusan.RSButtonHover();
-        rSButtonHover8 = new rojerusan.RSButtonHover();
         rSButtonHover9 = new rojerusan.RSButtonHover();
         rSButtonHover10 = new rojerusan.RSButtonHover();
         rSButtonHover11 = new rojerusan.RSButtonHover();
-        rSButtonHover12 = new rojerusan.RSButtonHover();
         rSButtonHover13 = new rojerusan.RSButtonHover();
-        jButton2 = new javax.swing.JButton();
-        panel1 = new java.awt.Panel();
-        panel3 = new java.awt.Panel();
-        label1 = new java.awt.Label();
-        dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
-        panel4 = new java.awt.Panel();
-        label2 = new java.awt.Label();
-        showTotal = new javax.swing.JButton();
+        rSButtonHover8 = new rojerusan.RSButtonHover();
         panel5 = new java.awt.Panel();
-        panel13 = new java.awt.Panel();
         jPanel4 = new javax.swing.JPanel();
         rSButtonHover16 = new rojerusan.RSButtonHover();
         spent = new javax.swing.JTextField();
@@ -101,22 +93,29 @@ public class Daily extends javax.swing.JFrame {
         rSButtonHover21 = new rojerusan.RSButtonHover();
         category = new javax.swing.JComboBox<>();
         add = new javax.swing.JButton();
-        panel2 = new java.awt.Panel();
-        panel7 = new java.awt.Panel();
         jScrollPane2 = new javax.swing.JScrollPane();
         data_table = new javax.swing.JTable();
-        panelBarChart = new java.awt.Panel();
+        panel4 = new java.awt.Panel();
+        label2 = new java.awt.Label();
+        showTotal = new javax.swing.JButton();
+        dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
+        label1 = new java.awt.Label();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds((screenWidth/2)-400, (screenHeight/2)-250, 0, 0);
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(900, 500));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.setPreferredSize(new java.awt.Dimension(784, 62));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 0), 5), "Money Manager...", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 3, 14), new java.awt.Color(102, 0, 0))); // NOI18N
 
-        rSButtonHover4.setBackground(new java.awt.Color(153, 51, 0));
+        panelBarChart.setBackground(new java.awt.Color(0, 51, 51));
+        panelBarChart.setLayout(new java.awt.BorderLayout());
+
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel2.setPreferredSize(new java.awt.Dimension(784, 62));
+
+        rSButtonHover4.setBackground(new java.awt.Color(102, 0, 0));
         rSButtonHover4.setText("Monthly");
         rSButtonHover4.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         rSButtonHover4.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +124,7 @@ public class Daily extends javax.swing.JFrame {
             }
         });
 
-        rSButtonHover7.setBackground(new java.awt.Color(102, 0, 102));
+        rSButtonHover7.setBackground(new java.awt.Color(51, 51, 51));
         rSButtonHover7.setText("Daily");
         rSButtonHover7.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         rSButtonHover7.addActionListener(new java.awt.event.ActionListener() {
@@ -134,16 +133,7 @@ public class Daily extends javax.swing.JFrame {
             }
         });
 
-        rSButtonHover8.setBackground(new java.awt.Color(153, 51, 0));
-        rSButtonHover8.setText("X");
-        rSButtonHover8.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover8ActionPerformed(evt);
-            }
-        });
-
-        rSButtonHover9.setBackground(new java.awt.Color(153, 51, 0));
+        rSButtonHover9.setBackground(new java.awt.Color(102, 0, 0));
         rSButtonHover9.setText("Signout");
         rSButtonHover9.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         rSButtonHover9.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +142,7 @@ public class Daily extends javax.swing.JFrame {
             }
         });
 
-        rSButtonHover10.setBackground(new java.awt.Color(153, 51, 0));
+        rSButtonHover10.setBackground(new java.awt.Color(102, 0, 0));
         rSButtonHover10.setText("HOME");
         rSButtonHover10.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         rSButtonHover10.addActionListener(new java.awt.event.ActionListener() {
@@ -161,7 +151,7 @@ public class Daily extends javax.swing.JFrame {
             }
         });
 
-        rSButtonHover11.setBackground(new java.awt.Color(153, 51, 0));
+        rSButtonHover11.setBackground(new java.awt.Color(102, 0, 0));
         rSButtonHover11.setText("Saving");
         rSButtonHover11.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         rSButtonHover11.addActionListener(new java.awt.event.ActionListener() {
@@ -170,16 +160,7 @@ public class Daily extends javax.swing.JFrame {
             }
         });
 
-        rSButtonHover12.setBackground(new java.awt.Color(51, 0, 153));
-        rSButtonHover12.setText("MONEY MANAGER");
-        rSButtonHover12.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover12ActionPerformed(evt);
-            }
-        });
-
-        rSButtonHover13.setBackground(new java.awt.Color(153, 51, 0));
+        rSButtonHover13.setBackground(new java.awt.Color(102, 0, 0));
         rSButtonHover13.setText("Setting");
         rSButtonHover13.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         rSButtonHover13.addActionListener(new java.awt.event.ActionListener() {
@@ -188,19 +169,12 @@ public class Daily extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/money.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(52, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(rSButtonHover10, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(rSButtonHover4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -212,101 +186,41 @@ public class Daily extends javax.swing.JFrame {
                 .addComponent(rSButtonHover13, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(rSButtonHover9, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSButtonHover12, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(344, 344, 344))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rSButtonHover10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSButtonHover4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSButtonHover7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSButtonHover11, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSButtonHover13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSButtonHover9, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(rSButtonHover12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton2))
-                .addContainerGap(16, Short.MAX_VALUE))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rSButtonHover10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonHover4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonHover7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonHover11, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonHover13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonHover9, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.NORTH);
-
-        panel1.setPreferredSize(new java.awt.Dimension(300, 400));
-        panel1.setLayout(new java.awt.BorderLayout());
-
-        panel3.setPreferredSize(new java.awt.Dimension(300, 25));
-        panel3.setLayout(new javax.swing.BoxLayout(panel3, javax.swing.BoxLayout.LINE_AXIS));
-
-        label1.setAlignment(java.awt.Label.CENTER);
-        label1.setBackground(new java.awt.Color(204, 204, 204));
-        label1.setPreferredSize(new java.awt.Dimension(50, 25));
-        label1.setText("Date");
-        panel3.add(label1);
-
-        dateChooserCombo1.setCalendarBackground(new java.awt.Color(204, 204, 204));
-        panel3.add(dateChooserCombo1);
-
-        panel1.add(panel3, java.awt.BorderLayout.NORTH);
-
-        panel4.setBackground(new java.awt.Color(255, 102, 102));
-        panel4.setPreferredSize(new java.awt.Dimension(300, 75));
-
-        label2.setAlignment(java.awt.Label.CENTER);
-        label2.setBackground(new java.awt.Color(255, 102, 102));
-        label2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        label2.setPreferredSize(new java.awt.Dimension(250, 50));
-        label2.setText("Total Money Spent");
-        panel4.add(label2);
-
-        showTotal.setBackground(new java.awt.Color(255, 102, 102));
-        showTotal.setText("Show");
-        showTotal.setPreferredSize(new java.awt.Dimension(100, 30));
-        showTotal.addActionListener(new java.awt.event.ActionListener() {
+        rSButtonHover8.setBackground(new java.awt.Color(153, 51, 0));
+        rSButtonHover8.setText("X");
+        rSButtonHover8.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        rSButtonHover8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showTotalActionPerformed(evt);
+                rSButtonHover8ActionPerformed(evt);
             }
         });
-        panel4.add(showTotal);
 
-        panel1.add(panel4, java.awt.BorderLayout.CENTER);
-
-        panel5.setBackground(new java.awt.Color(102, 102, 255));
+        panel5.setBackground(new java.awt.Color(0, 51, 51));
         panel5.setPreferredSize(new java.awt.Dimension(300, 300));
-        java.awt.FlowLayout flowLayout1 = new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 10, 20);
-        flowLayout1.setAlignOnBaseline(true);
-        panel5.setLayout(flowLayout1);
+        java.awt.FlowLayout flowLayout2 = new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 10, 20);
+        flowLayout2.setAlignOnBaseline(true);
+        panel5.setLayout(flowLayout2);
 
-        panel13.setBackground(new java.awt.Color(102, 102, 255));
-        panel13.setPreferredSize(new java.awt.Dimension(260, 25));
-
-        javax.swing.GroupLayout panel13Layout = new javax.swing.GroupLayout(panel13);
-        panel13.setLayout(panel13Layout);
-        panel13Layout.setHorizontalGroup(
-            panel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 260, Short.MAX_VALUE)
-        );
-        panel13Layout.setVerticalGroup(
-            panel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 25, Short.MAX_VALUE)
-        );
-
-        panel5.add(panel13);
-
-        jPanel4.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel4.setBackground(new java.awt.Color(0, 153, 153));
         jPanel4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
 
-        rSButtonHover16.setBackground(new java.awt.Color(204, 0, 51));
+        rSButtonHover16.setBackground(new java.awt.Color(102, 0, 0));
         rSButtonHover16.setText("Spent");
         rSButtonHover16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -342,9 +256,9 @@ public class Daily extends javax.swing.JFrame {
 
         panel5.add(jPanel4);
 
-        jPanel9.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel9.setBackground(new java.awt.Color(0, 153, 153));
 
-        rSButtonHover21.setBackground(new java.awt.Color(51, 0, 153));
+        rSButtonHover21.setBackground(new java.awt.Color(102, 0, 0));
         rSButtonHover21.setText("Select Category");
         rSButtonHover21.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         rSButtonHover21.addActionListener(new java.awt.event.ActionListener() {
@@ -377,7 +291,8 @@ public class Daily extends javax.swing.JFrame {
 
         panel5.add(jPanel9);
 
-        add.setBackground(new java.awt.Color(102, 102, 102));
+        add.setBackground(new java.awt.Color(102, 0, 0));
+        add.setForeground(new java.awt.Color(255, 255, 0));
         add.setText("Add");
         add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -386,15 +301,8 @@ public class Daily extends javax.swing.JFrame {
         });
         panel5.add(add);
 
-        panel1.add(panel5, java.awt.BorderLayout.SOUTH);
-
-        getContentPane().add(panel1, java.awt.BorderLayout.LINE_START);
-
-        panel2.setLayout(new java.awt.BorderLayout());
-
-        panel7.setPreferredSize(new java.awt.Dimension(484, 250));
-        panel7.setLayout(new java.awt.BorderLayout());
-
+        data_table.setBackground(new java.awt.Color(0, 51, 51));
+        data_table.setForeground(new java.awt.Color(255, 255, 0));
         data_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -417,19 +325,109 @@ public class Daily extends javax.swing.JFrame {
             }
         ));
         jScrollPane2.setViewportView(data_table);
-        if (data_table.getColumnModel().getColumnCount() > 0) {
-            data_table.getColumnModel().getColumn(0).setPreferredWidth(20);
-        }
 
-        panel7.add(jScrollPane2, java.awt.BorderLayout.CENTER);
+        panel4.setBackground(new java.awt.Color(0, 51, 51));
+        panel4.setPreferredSize(new java.awt.Dimension(300, 75));
 
-        panel2.add(panel7, java.awt.BorderLayout.SOUTH);
+        label2.setAlignment(java.awt.Label.CENTER);
+        label2.setBackground(new java.awt.Color(102, 0, 0));
+        label2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        label2.setForeground(new java.awt.Color(255, 255, 0));
+        label2.setPreferredSize(new java.awt.Dimension(250, 50));
+        label2.setText("Total Money Spent");
+        panel4.add(label2);
 
-        panelBarChart.setBackground(new java.awt.Color(153, 153, 255));
-        panelBarChart.setLayout(new java.awt.BorderLayout());
-        panel2.add(panelBarChart, java.awt.BorderLayout.CENTER);
+        showTotal.setBackground(new java.awt.Color(102, 0, 0));
+        showTotal.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        showTotal.setForeground(new java.awt.Color(255, 255, 0));
+        showTotal.setText("Show");
+        showTotal.setPreferredSize(new java.awt.Dimension(100, 30));
+        showTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showTotalActionPerformed(evt);
+            }
+        });
+        panel4.add(showTotal);
 
-        getContentPane().add(panel2, java.awt.BorderLayout.CENTER);
+        dateChooserCombo1.setCalendarBackground(new java.awt.Color(102, 0, 0));
+
+        label1.setAlignment(java.awt.Label.CENTER);
+        label1.setBackground(new java.awt.Color(102, 0, 0));
+        label1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        label1.setForeground(new java.awt.Color(255, 255, 0));
+        label1.setPreferredSize(new java.awt.Dimension(50, 25));
+        label1.setText("Date");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(148, 148, 148)
+                        .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(dateChooserCombo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(panel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(panel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(panelBarChart, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dateChooserCombo1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(panel4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(panel5, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(panelBarChart, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -438,7 +436,7 @@ public class Daily extends javax.swing.JFrame {
         // TODO add your handling code here:
         Month month = new Month();
         month.show();
-        
+
         dispose();
     }//GEN-LAST:event_rSButtonHover4ActionPerformed
 
@@ -446,25 +444,18 @@ public class Daily extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rSButtonHover7ActionPerformed
 
-    private void rSButtonHover8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover8ActionPerformed
-
-        // TODO add your handling code here:
-        System.exit(0);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSButtonHover8ActionPerformed
-
     private void rSButtonHover9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover9ActionPerformed
         // TODO add your handling code here:
         Loginpage login = new Loginpage();
         login.show();
-        
+
         dispose();
     }//GEN-LAST:event_rSButtonHover9ActionPerformed
 
     private void rSButtonHover10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover10ActionPerformed
         Home home = new Home();
         home.show();
-        
+
         dispose();
     }//GEN-LAST:event_rSButtonHover10ActionPerformed
 
@@ -472,25 +463,24 @@ public class Daily extends javax.swing.JFrame {
         // TODO add your handling code here:
         Savings savings = new Savings();
         savings.show();
-        
+
         dispose();
     }//GEN-LAST:event_rSButtonHover11ActionPerformed
-
-    private void rSButtonHover12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSButtonHover12ActionPerformed
 
     private void rSButtonHover13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover13ActionPerformed
         // TODO add your handling code here:
         Settings settings = new Settings();
         settings.show();
-        
+
         dispose();
     }//GEN-LAST:event_rSButtonHover13ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void rSButtonHover8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover8ActionPerformed
+
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        System.exit(0);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSButtonHover8ActionPerformed
 
     private void rSButtonHover16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover16ActionPerformed
         // TODO add your handling code here:
@@ -508,23 +498,22 @@ public class Daily extends javax.swing.JFrame {
         // TODO add your handling code here:
         Double exp = Double.parseDouble(spent.getText());
         String cat = category.getSelectedItem().toString();
-        
+
         try {
             try (FileWriter fw = new FileWriter("src\\Database_Daily.csv", true)) {
-                    fw.write("\n" + 1 + "," + "Ayon" + "," + "4321" + "," + "1/11/2022" + "," + 40000 + "," + cat + "," + exp);
-                    fw.close();
-                }
-            
-            
+                fw.write("\n" + 1 + "," + "Ayon" + "," + "4321" + "," + "1/11/2022" + "," + 40000 + "," + cat + "," + exp);
+                fw.close();
+            }
+
         }catch (IOException ex) {
-                Logger.getLogger(Daily.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Daily.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         try {
             // TODO add your handling code here:
             Scanner input = new Scanner(new FileReader("src\\Database_Daily.csv"));
             String line= input.nextLine();
-        
+
             double total=0;
             Integer cnt=0;
             while(input.hasNextLine()){
@@ -532,18 +521,17 @@ public class Daily extends javax.swing.JFrame {
                 String[] arr = line.split(",");
                 Double expense = Double.parseDouble(arr[6]);
                 String category = arr[5];
-                
+
                 total += expense;
-                
+
                 data_table.setValueAt(cnt+1, cnt, 0);
                 data_table.setValueAt(category, cnt, 1);
                 data_table.setValueAt(expense, cnt, 2);
                 cnt++;
             }
 
-            
-                t = Double.toString(total);
-                showTotal.setText(t);
+            t = Double.toString(total);
+            showTotal.setText(t);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Daily.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -551,12 +539,12 @@ public class Daily extends javax.swing.JFrame {
 
     private void showTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showTotalActionPerformed
         // TODO add your handling code here:
-               
+
         try {
             // TODO add your handling code here:
             Scanner input = new Scanner(new FileReader("src\\Database_Daily.csv"));
             String line= input.nextLine();
-        
+
             double total=0;
             Integer cnt=0;
             while(input.hasNextLine()){
@@ -564,22 +552,21 @@ public class Daily extends javax.swing.JFrame {
                 String[] arr = line.split(",");
                 Double expense = Double.parseDouble(arr[6]);
                 String category = arr[5];
-                
+
                 total += expense;
-                
+
                 data_table.setValueAt(cnt+1, cnt, 0);
                 data_table.setValueAt(category, cnt, 1);
                 data_table.setValueAt(expense, cnt, 2);
                 cnt++;
             }
 
-            
-                t = Double.toString(total);
-                showTotal.setText(t);
+            t = Double.toString(total);
+            showTotal.setText(t);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Daily.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
+
     }//GEN-LAST:event_showTotalActionPerformed
 
     /**
@@ -624,24 +611,18 @@ public class Daily extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> category;
     private javax.swing.JTable data_table;
     private datechooser.beans.DateChooserCombo dateChooserCombo1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
     private java.awt.Label label1;
     private java.awt.Label label2;
-    private java.awt.Panel panel1;
-    private java.awt.Panel panel13;
-    private java.awt.Panel panel2;
-    private java.awt.Panel panel3;
     private java.awt.Panel panel4;
     private java.awt.Panel panel5;
-    private java.awt.Panel panel7;
     private java.awt.Panel panelBarChart;
     private rojerusan.RSButtonHover rSButtonHover10;
     private rojerusan.RSButtonHover rSButtonHover11;
-    private rojerusan.RSButtonHover rSButtonHover12;
     private rojerusan.RSButtonHover rSButtonHover13;
     private rojerusan.RSButtonHover rSButtonHover16;
     private rojerusan.RSButtonHover rSButtonHover21;

@@ -42,23 +42,20 @@ public class Home extends javax.swing.JFrame {
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jPopupMenu1 = new javax.swing.JPopupMenu();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        AccountNumber = new javax.swing.JComboBox<>();
+        ShowBalance = new javax.swing.JButton();
+        rSButtonHover15 = new rojerusan.RSButtonHover();
         jPanel1 = new javax.swing.JPanel();
         rSButtonHover4 = new rojerusan.RSButtonHover();
         rSButtonHover7 = new rojerusan.RSButtonHover();
-        rSButtonHover8 = new rojerusan.RSButtonHover();
         rSButtonHover10 = new rojerusan.RSButtonHover();
         rSButtonHover11 = new rojerusan.RSButtonHover();
-        rSButtonHover12 = new rojerusan.RSButtonHover();
         rSButtonHover13 = new rojerusan.RSButtonHover();
-        jButton2 = new javax.swing.JButton();
-        AccountNumber = new javax.swing.JComboBox<>();
-        jTextField3 = new javax.swing.JTextField();
-        ShowBalance = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        rSButtonHover14 = new rojerusan.RSButtonHover();
         rSButtonHover16 = new rojerusan.RSButtonHover();
-        rSButtonHover15 = new rojerusan.RSButtonHover();
+        rSButtonHover8 = new rojerusan.RSButtonHover();
 
         jMenu1.setText("jMenu1");
 
@@ -79,135 +76,14 @@ public class Home extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 0), 5), "Money Manager...", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 3, 14), new java.awt.Color(102, 0, 0))); // NOI18N
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        rSButtonHover4.setBackground(new java.awt.Color(153, 51, 0));
-        rSButtonHover4.setText("Monthly");
-        rSButtonHover4.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover4ActionPerformed(evt);
-            }
-        });
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home.jpg"))); // NOI18N
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 380, 320));
 
-        rSButtonHover7.setBackground(new java.awt.Color(153, 51, 0));
-        rSButtonHover7.setText("Daily");
-        rSButtonHover7.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover7ActionPerformed(evt);
-            }
-        });
-
-        rSButtonHover8.setBackground(new java.awt.Color(153, 51, 0));
-        rSButtonHover8.setText("X");
-        rSButtonHover8.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover8ActionPerformed(evt);
-            }
-        });
-
-        rSButtonHover10.setBackground(new java.awt.Color(102, 0, 102));
-        rSButtonHover10.setText("HOME");
-        rSButtonHover10.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover10ActionPerformed(evt);
-            }
-        });
-
-        rSButtonHover11.setBackground(new java.awt.Color(153, 51, 0));
-        rSButtonHover11.setText("Saving");
-        rSButtonHover11.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover11ActionPerformed(evt);
-            }
-        });
-
-        rSButtonHover12.setBackground(new java.awt.Color(51, 0, 153));
-        rSButtonHover12.setText("MONEY MANAGER");
-        rSButtonHover12.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover12ActionPerformed(evt);
-            }
-        });
-
-        rSButtonHover13.setBackground(new java.awt.Color(153, 51, 0));
-        rSButtonHover13.setText("Setting");
-        rSButtonHover13.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover13ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/money.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(rSButtonHover10, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSButtonHover4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSButtonHover7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSButtonHover11, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSButtonHover13, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(101, 101, 101)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(rSButtonHover12, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(rSButtonHover12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton2))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 24, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rSButtonHover10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonHover4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonHover7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonHover11, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonHover13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21))
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        AccountNumber.setBackground(new java.awt.Color(0, 51, 51));
-        AccountNumber.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        AccountNumber.setForeground(new java.awt.Color(255, 51, 0));
-        AccountNumber.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Account1", "Account2" }));
-        AccountNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AccountNumberActionPerformed(evt);
-            }
-        });
-        getContentPane().add(AccountNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 160, 29));
-
-        jTextField3.setBackground(new java.awt.Color(51, 0, 204));
+        jTextField3.setBackground(new java.awt.Color(102, 0, 0));
         jTextField3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTextField3.setForeground(new java.awt.Color(255, 255, 51));
         jTextField3.setText("                 Select Account");
@@ -216,31 +92,85 @@ public class Home extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 330, 31));
+        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 340, -1));
 
-        ShowBalance.setBackground(new java.awt.Color(102, 0, 102));
+        AccountNumber.setBackground(new java.awt.Color(102, 0, 0));
+        AccountNumber.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        AccountNumber.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Account1", "Account2" }));
+        AccountNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AccountNumberActionPerformed(evt);
+            }
+        });
+        jPanel2.add(AccountNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, 160, 29));
+
+        ShowBalance.setBackground(new java.awt.Color(102, 0, 0));
         ShowBalance.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        ShowBalance.setForeground(new java.awt.Color(255, 255, 0));
         ShowBalance.setText("See Balance");
         ShowBalance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ShowBalanceActionPerformed(evt);
             }
         });
-        getContentPane().add(ShowBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 330, -1));
+        jPanel2.add(ShowBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 330, -1));
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home.jpg"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 430, 320));
-
-        rSButtonHover14.setBackground(new java.awt.Color(0, 51, 51));
-        rSButtonHover14.setText("Money Manager");
-        rSButtonHover14.addActionListener(new java.awt.event.ActionListener() {
+        rSButtonHover15.setBackground(new java.awt.Color(102, 0, 0));
+        rSButtonHover15.setText("Signout");
+        rSButtonHover15.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        rSButtonHover15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover14ActionPerformed(evt);
+                rSButtonHover15ActionPerformed(evt);
             }
         });
-        jPanel2.add(rSButtonHover14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 390, -1));
+        jPanel2.add(rSButtonHover15, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 400, 110, 30));
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+
+        rSButtonHover4.setBackground(new java.awt.Color(102, 0, 0));
+        rSButtonHover4.setText("Monthly");
+        rSButtonHover4.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        rSButtonHover4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonHover4ActionPerformed(evt);
+            }
+        });
+
+        rSButtonHover7.setBackground(new java.awt.Color(102, 0, 0));
+        rSButtonHover7.setText("Daily");
+        rSButtonHover7.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        rSButtonHover7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonHover7ActionPerformed(evt);
+            }
+        });
+
+        rSButtonHover10.setBackground(new java.awt.Color(51, 51, 51));
+        rSButtonHover10.setText("HOME");
+        rSButtonHover10.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        rSButtonHover10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonHover10ActionPerformed(evt);
+            }
+        });
+
+        rSButtonHover11.setBackground(new java.awt.Color(102, 0, 0));
+        rSButtonHover11.setText("Saving");
+        rSButtonHover11.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        rSButtonHover11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonHover11ActionPerformed(evt);
+            }
+        });
+
+        rSButtonHover13.setBackground(new java.awt.Color(102, 0, 0));
+        rSButtonHover13.setText("Setting");
+        rSButtonHover13.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        rSButtonHover13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonHover13ActionPerformed(evt);
+            }
+        });
 
         rSButtonHover16.setBackground(new java.awt.Color(0, 0, 102));
         rSButtonHover16.setText("An app to track your expenses");
@@ -249,19 +179,56 @@ public class Home extends javax.swing.JFrame {
                 rSButtonHover16ActionPerformed(evt);
             }
         });
-        jPanel2.add(rSButtonHover16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 390, 30));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 390, 410));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(rSButtonHover10, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rSButtonHover4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rSButtonHover7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rSButtonHover11, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rSButtonHover13, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(rSButtonHover16, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 24, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rSButtonHover10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonHover4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonHover7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonHover11, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonHover13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addComponent(rSButtonHover16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
-        rSButtonHover15.setBackground(new java.awt.Color(153, 51, 0));
-        rSButtonHover15.setText("Signout");
-        rSButtonHover15.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover15.addActionListener(new java.awt.event.ActionListener() {
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 500, -1));
+
+        rSButtonHover8.setBackground(new java.awt.Color(102, 0, 0));
+        rSButtonHover8.setText("X");
+        rSButtonHover8.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        rSButtonHover8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover15ActionPerformed(evt);
+                rSButtonHover8ActionPerformed(evt);
             }
         });
-        getContentPane().add(rSButtonHover15, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, 110, 30));
+        jPanel2.add(rSButtonHover8, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 20, 40, 24));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 490));
 
         pack();
         setLocationRelativeTo(null);
@@ -274,10 +241,6 @@ public class Home extends javax.swing.JFrame {
         
         dispose();
     }//GEN-LAST:event_rSButtonHover13ActionPerformed
-
-    private void rSButtonHover12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSButtonHover12ActionPerformed
 
     private void rSButtonHover11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover11ActionPerformed
         // TODO add your handling code here:
@@ -306,10 +269,6 @@ public class Home extends javax.swing.JFrame {
         dispose();
         
     }//GEN-LAST:event_rSButtonHover7ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
@@ -362,10 +321,6 @@ public class Home extends javax.swing.JFrame {
         
                 dispose();
     }//GEN-LAST:event_rSButtonHover4ActionPerformed
-
-    private void rSButtonHover14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSButtonHover14ActionPerformed
 
     private void rSButtonHover15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover15ActionPerformed
         // TODO add your handling code here:
@@ -422,7 +377,6 @@ public class Home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> AccountNumber;
     private javax.swing.JButton ShowBalance;
-    private javax.swing.JButton jButton2;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
@@ -436,9 +390,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private rojerusan.RSButtonHover rSButtonHover10;
     private rojerusan.RSButtonHover rSButtonHover11;
-    private rojerusan.RSButtonHover rSButtonHover12;
     private rojerusan.RSButtonHover rSButtonHover13;
-    private rojerusan.RSButtonHover rSButtonHover14;
     private rojerusan.RSButtonHover rSButtonHover15;
     private rojerusan.RSButtonHover rSButtonHover16;
     private rojerusan.RSButtonHover rSButtonHover4;
