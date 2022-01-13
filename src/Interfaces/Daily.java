@@ -6,11 +6,19 @@ package Interfaces;
 
 import java.awt.*;
 import java.io.*;
+import static java.lang.constant.ConstantDescs.NULL;
+import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -29,18 +37,22 @@ public class Daily extends javax.swing.JFrame {
     public Daily() {
         initComponents();
         showPieChart();
+        Date n = new Date();
+        jDateChooser1.setDate(n);
     }
     
     /**
      *
      */
+    
+    Double food=0.0, clothing=0.0, entertainment=0.0;
     public final void showPieChart(){
         
         //create dataset
       DefaultPieDataset barDataset = new DefaultPieDataset( );
-      barDataset.setValue( "Shopping" , new Double (2000) );  
-      barDataset.setValue( "Entertainment" , new Double (2725) );   
-      barDataset.setValue( "Food" , new Double (5468) );
+      barDataset.setValue( "Clothing" , clothing );  
+      barDataset.setValue( "Entertainment" , entertainment );   
+      barDataset.setValue( "Food" , food );
       
       //create chart
        JFreeChart piechart = ChartFactory.createPieChart("",barDataset, false,true,false);//explain
@@ -48,7 +60,7 @@ public class Daily extends javax.swing.JFrame {
         PiePlot piePlot =(PiePlot) piechart.getPlot();
       
        //changing pie chart blocks colors
-       piePlot.setSectionPaint("Shopping", new Color(0,204,102));
+       piePlot.setSectionPaint("Entertainment", new Color(0,204,102));
         piePlot.setSectionPaint("Clothing", new Color(255,153,51));
         piePlot.setSectionPaint("Food", new Color(255,255,0));
       
@@ -76,6 +88,7 @@ public class Daily extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        showTotal1 = new javax.swing.JButton();
         panelBarChart = new java.awt.Panel();
         jPanel2 = new javax.swing.JPanel();
         rSButtonHover4 = new rojerusan.RSButtonHover();
@@ -95,19 +108,30 @@ public class Daily extends javax.swing.JFrame {
         add = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         data_table = new javax.swing.JTable();
+        label1 = new java.awt.Label();
         panel4 = new java.awt.Panel();
         label2 = new java.awt.Label();
         showTotal = new javax.swing.JButton();
-        dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
-        label1 = new java.awt.Label();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds((screenWidth/2)-400, (screenHeight/2)-250, 0, 0);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(900, 500));
+        setPreferredSize(new java.awt.Dimension(900, 450));
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 0), 5), "Money Manager...", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 3, 14), new java.awt.Color(102, 0, 0))); // NOI18N
+
+        showTotal1.setBackground(new java.awt.Color(102, 0, 0));
+        showTotal1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        showTotal1.setForeground(new java.awt.Color(255, 255, 0));
+        showTotal1.setText("Print");
+        showTotal1.setPreferredSize(new java.awt.Dimension(100, 30));
+        showTotal1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showTotal1ActionPerformed(evt);
+            }
+        });
 
         panelBarChart.setBackground(new java.awt.Color(0, 51, 51));
         panelBarChart.setLayout(new java.awt.BorderLayout());
@@ -318,6 +342,22 @@ public class Daily extends javax.swing.JFrame {
                 {null, null, null},
                 {null, null, null},
                 {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
                 {null, null, null}
             },
             new String [] {
@@ -325,6 +365,13 @@ public class Daily extends javax.swing.JFrame {
             }
         ));
         jScrollPane2.setViewportView(data_table);
+
+        label1.setAlignment(java.awt.Label.CENTER);
+        label1.setBackground(new java.awt.Color(102, 0, 0));
+        label1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        label1.setForeground(new java.awt.Color(255, 255, 0));
+        label1.setPreferredSize(new java.awt.Dimension(50, 25));
+        label1.setText("Date");
 
         panel4.setBackground(new java.awt.Color(0, 51, 51));
         panel4.setPreferredSize(new java.awt.Dimension(300, 75));
@@ -349,14 +396,7 @@ public class Daily extends javax.swing.JFrame {
         });
         panel4.add(showTotal);
 
-        dateChooserCombo1.setCalendarBackground(new java.awt.Color(102, 0, 0));
-
-        label1.setAlignment(java.awt.Label.CENTER);
-        label1.setBackground(new java.awt.Color(102, 0, 0));
-        label1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        label1.setForeground(new java.awt.Color(255, 255, 0));
-        label1.setPreferredSize(new java.awt.Dimension(50, 25));
-        label1.setText("Date");
+        jDateChooser1.setDateFormatString("d MMM y");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -368,48 +408,57 @@ public class Daily extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(148, 148, 148)
-                        .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(dateChooserCombo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(panel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(panel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(25, 25, 25)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(panelBarChart, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())))
+                                .addGap(148, 148, 148)
+                                .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap())))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(panel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(panel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(panelBarChart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap())
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(showTotal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dateChooserCombo1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(showTotal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(13, 13, 13)
+                        .addComponent(panelBarChart, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(panel4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(panel5, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(panelBarChart, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(panel4, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(panel5, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -418,15 +467,11 @@ public class Daily extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -498,10 +543,22 @@ public class Daily extends javax.swing.JFrame {
         // TODO add your handling code here:
         Double exp = Double.parseDouble(spent.getText());
         String cat = category.getSelectedItem().toString();
-
+        SimpleDateFormat dcn = new SimpleDateFormat("dd-MM-yy");
+        String date = dcn.format(jDateChooser1.getDate() );
+        food=0.0; clothing=0.0; entertainment=0.0;
+        //jLabel1.setText(date.toString());
+        try {
+            try (FileWriter sfw = new FileWriter("src\\Settings.csv", true)) {
+                Double e = -exp;
+                sfw.write(e.toString() + "," + e.toString() + "\n");
+                sfw.close();
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
+        }
         try {
             try (FileWriter fw = new FileWriter("src\\Database_Daily.csv", true)) {
-                fw.write("\n" + 1 + "," + "Ayon" + "," + "4321" + "," + "1/11/2022" + "," + 40000 + "," + cat + "," + exp);
+                fw.write("\n" + "Ayon" + "," + "4321" + "," + date + "," + 40000 + "," + cat + "," + exp);
                 fw.close();
             }
 
@@ -516,18 +573,36 @@ public class Daily extends javax.swing.JFrame {
 
             double total=0;
             Integer cnt=0;
+            Integer row=0;
             while(input.hasNextLine()){
                 line =  input.nextLine();
                 String[] arr = line.split(",");
-                Double expense = Double.parseDouble(arr[6]);
-                String category = arr[5];
+                String table_date = arr[2];
+                String category = arr[4];
+                Double expense = Double.parseDouble(arr[5]);
 
-                total += expense;
-
-                data_table.setValueAt(cnt+1, cnt, 0);
-                data_table.setValueAt(category, cnt, 1);
-                data_table.setValueAt(expense, cnt, 2);
-                cnt++;
+                if(date.equals(table_date)){
+                    total += expense;
+                    if(category.equals("Food")){
+                        food += expense;
+                    }
+                    if(category.equals("Clothing")){
+                        clothing += expense;
+                    }
+                    if(category.equals("Entertainment")){
+                        entertainment += expense;
+                    }
+                    data_table.setValueAt(row+1, row, 0);
+                    data_table.setValueAt(category, row, 1);
+                    data_table.setValueAt(expense, row, 2);
+                    row++;
+                }cnt++;
+            }
+            
+            for(int i=row; i<cnt; i++){
+                    data_table.setValueAt("", i, 0);
+                    data_table.setValueAt("", i, 1);
+                    data_table.setValueAt("", i, 2);
             }
 
             t = Double.toString(total);
@@ -535,39 +610,82 @@ public class Daily extends javax.swing.JFrame {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Daily.class.getName()).log(Level.SEVERE, null, ex);
         }
+        showPieChart();
     }//GEN-LAST:event_addActionPerformed
 
     private void showTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showTotalActionPerformed
         // TODO add your handling code here:
-
-        try {
-            // TODO add your handling code here:
-            Scanner input = new Scanner(new FileReader("src\\Database_Daily.csv"));
-            String line= input.nextLine();
-
-            double total=0;
-            Integer cnt=0;
-            while(input.hasNextLine()){
-                line =  input.nextLine();
-                String[] arr = line.split(",");
-                Double expense = Double.parseDouble(arr[6]);
-                String category = arr[5];
-
-                total += expense;
-
-                data_table.setValueAt(cnt+1, cnt, 0);
-                data_table.setValueAt(category, cnt, 1);
-                data_table.setValueAt(expense, cnt, 2);
-                cnt++;
-            }
-
-            t = Double.toString(total);
-            showTotal.setText(t);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Daily.class.getName()).log(Level.SEVERE, null, ex);
+        
+        Date now = new Date();
+        food=0.0; clothing=0.0; entertainment=0.0;
+        if(jDateChooser1.getDate().compareTo(now) > 0){
+            JFrame f = new JFrame();
+            JOptionPane.showMessageDialog(f, "Invalid Date");
         }
+        else{
+            SimpleDateFormat dcn = new SimpleDateFormat("dd-MM-yy");
+            String date = dcn.format(jDateChooser1.getDate() );
 
+            try {
+                // TODO add your handling code here:
+                Scanner input = new Scanner(new FileReader("src\\Database_Daily.csv"));
+                String line= input.nextLine();
+
+                double total=0;
+                Integer cnt=0;
+                Integer row=0;
+                while(input.hasNextLine()){
+                    line =  input.nextLine();
+                    String[] arr = line.split(",");
+                    String table_date = arr[2];
+                    String category = arr[4];
+                    Double expense = Double.parseDouble(arr[5]);
+
+                    if(date.equals(table_date)){
+                        total += expense;
+                        if(category.equals("Food")){
+                            food += expense;
+                        }
+                        if(category.equals("Clothing")){
+                            clothing += expense;
+                        }
+                        if(category.equals("Entertainment")){
+                            entertainment += expense;
+                        }
+                        data_table.setValueAt(row+1, row, 0);
+                        data_table.setValueAt(category, row, 1);
+                        data_table.setValueAt(expense, row, 2);
+                        row++;
+                    }cnt++;
+                }
+
+                for(int i=row; i<cnt; i++){
+                        data_table.setValueAt("", i, 0);
+                        data_table.setValueAt("", i, 1);
+                        data_table.setValueAt("", i, 2);
+                }
+
+                t = Double.toString(total);
+                showTotal.setText(t);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(Daily.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            showPieChart();
+        }
+        
+        
     }//GEN-LAST:event_showTotalActionPerformed
+
+    private void showTotal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showTotal1ActionPerformed
+        // TODO add your handling code here:
+        MessageFormat header=new MessageFormat("Daily Expense Report");
+        MessageFormat footer=new MessageFormat("Page(0,number,integer)");
+        try {
+            data_table.print(JTable.PrintMode.NORMAL, header, footer);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_showTotal1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -610,7 +728,7 @@ public class Daily extends javax.swing.JFrame {
     private javax.swing.JButton add;
     private javax.swing.JComboBox<String> category;
     private javax.swing.JTable data_table;
-    private datechooser.beans.DateChooserCombo dateChooserCombo1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
@@ -631,6 +749,7 @@ public class Daily extends javax.swing.JFrame {
     private rojerusan.RSButtonHover rSButtonHover8;
     private rojerusan.RSButtonHover rSButtonHover9;
     private javax.swing.JButton showTotal;
+    private javax.swing.JButton showTotal1;
     private javax.swing.JTextField spent;
     // End of variables declaration//GEN-END:variables
 }

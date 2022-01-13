@@ -4,6 +4,16 @@
  */
 package Interfaces;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author asus
@@ -32,15 +42,16 @@ public class Forgetpassword extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         answer = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        Answer = new javax.swing.JTextField();
+        UserName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        rSButtonHover15 = new rojerusan.RSButtonHover();
-        rSButtonHover16 = new rojerusan.RSButtonHover();
-        rSButtonHover17 = new rojerusan.RSButtonHover();
+        NewPassword = new javax.swing.JPasswordField();
+        BackPageButton = new rojerusan.RSButtonHover();
+        SaveButton = new rojerusan.RSButtonHover();
+        rSButtonHover8 = new rojerusan.RSButtonHover();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         newpassword.setBackground(new java.awt.Color(0, 153, 153));
         newpassword.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 51), 5), "Change Your Password Here....", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 3, 14), new java.awt.Color(102, 0, 0))); // NOI18N
@@ -61,32 +72,40 @@ public class Forgetpassword extends javax.swing.JFrame {
         answer.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         answer.setText("Answer");
 
+        jTextField1.setEditable(false);
+        jTextField1.setText("What was your previous User Name?");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/download.png"))); // NOI18N
 
-        rSButtonHover15.setBackground(new java.awt.Color(102, 0, 0));
-        rSButtonHover15.setText("Back");
-        rSButtonHover15.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover15.addActionListener(new java.awt.event.ActionListener() {
+        BackPageButton.setBackground(new java.awt.Color(102, 0, 0));
+        BackPageButton.setText("Back");
+        BackPageButton.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        BackPageButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover15ActionPerformed(evt);
+                BackPageButtonActionPerformed(evt);
             }
         });
 
-        rSButtonHover16.setBackground(new java.awt.Color(0, 0, 102));
-        rSButtonHover16.setText("Search");
-        rSButtonHover16.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover16.addActionListener(new java.awt.event.ActionListener() {
+        SaveButton.setBackground(new java.awt.Color(102, 0, 0));
+        SaveButton.setText("Save");
+        SaveButton.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        SaveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover16ActionPerformed(evt);
+                SaveButtonActionPerformed(evt);
             }
         });
 
-        rSButtonHover17.setBackground(new java.awt.Color(102, 0, 0));
-        rSButtonHover17.setText("Save");
-        rSButtonHover17.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover17.addActionListener(new java.awt.event.ActionListener() {
+        rSButtonHover8.setBackground(new java.awt.Color(102, 0, 0));
+        rSButtonHover8.setText("X");
+        rSButtonHover8.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        rSButtonHover8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover17ActionPerformed(evt);
+                rSButtonHover8ActionPerformed(evt);
             }
         });
 
@@ -108,46 +127,47 @@ public class Forgetpassword extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(newpasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(newpasswordLayout.createSequentialGroup()
-                                .addComponent(rSButtonHover17, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(46, 46, 46)
-                                .addComponent(rSButtonHover15, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(newpasswordLayout.createSequentialGroup()
-                                .addGroup(newpasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
-                                    .addComponent(jTextField2)
-                                    .addComponent(jPasswordField1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rSButtonHover16, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(27, Short.MAX_VALUE))
+                                .addComponent(BackPageButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(newpasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
+                                .addComponent(Answer)
+                                .addComponent(NewPassword)))))
+                .addContainerGap(147, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newpasswordLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         newpasswordLayout.setVerticalGroup(
             newpasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(newpasswordLayout.createSequentialGroup()
-                .addGap(94, 94, 94)
+                .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
                 .addGroup(newpasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addGroup(newpasswordLayout.createSequentialGroup()
                         .addGroup(newpasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(username)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSButtonHover16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40)
+                            .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(45, 45, 45)
                         .addGroup(newpasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(securityques)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(38, 38, 38)
                         .addGroup(newpasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(answer)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Answer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(46, 46, 46)
                         .addGroup(newpasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(NewPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(36, 36, 36)
                 .addGroup(newpasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rSButtonHover17, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonHover15, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BackPageButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(59, Short.MAX_VALUE))
         );
 
@@ -169,20 +189,106 @@ public class Forgetpassword extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void rSButtonHover15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover15ActionPerformed
+    private void BackPageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackPageButtonActionPerformed
         // TODO add your handling code here:
+        Loginpage login = new Loginpage();
+        login.show();
+        dispose();
        
-    }//GEN-LAST:event_rSButtonHover15ActionPerformed
+    }//GEN-LAST:event_BackPageButtonActionPerformed
 
-    private void rSButtonHover16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover16ActionPerformed
+    private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rSButtonHover16ActionPerformed
+        
+      
+        String user = UserName.getText();
+        String answer = Answer.getText();
+        String pass = NewPassword.getText();
+        
+        if ("".equals(user)) {
+            JFrame f = new JFrame();
+            JOptionPane.showMessageDialog(f, "User Name box is empty");
+            return;
+        } else if ("".equals(pass)) {
+            JFrame f = new JFrame();
+            JOptionPane.showMessageDialog(f, "Password box is empty");
+            return;
+        }
+        
+        
+         try {
+            FileReader fr = new FileReader("src\\Login.csv");
+            BufferedReader br = new BufferedReader(fr);
 
-    private void rSButtonHover17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover17ActionPerformed
+            //FileReader ffr=new FileReader("src\\database.txt");
+            //BufferedReader bfr=new BufferedReader(ffr);
+
+            String line;
+            Boolean matched = false;
+            //Boolean matched = false;
+            
+            while ((line = br.readLine()) != null) {
+                String[] arr = line.split(",");
+                if (user.equals(arr[0])) 
+                {
+                    matched=true;
+                    break;
+                }
+            }
+
+           try (FileWriter fw1 = new FileWriter("src\\Login.csv", true))
+           {
+                    fw1.write(user+","+pass+"\n");
+                    fw1.close();
+                    JFrame f = new JFrame();
+                    JOptionPane.showMessageDialog(f, "Your information has successfully stored!");
+            }
+            
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Loginpage.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Loginpage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_SaveButtonActionPerformed
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rSButtonHover17ActionPerformed
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void rSButtonHover8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover8ActionPerformed
+
+        // TODO add your handling code here:
+        System.exit(0);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSButtonHover8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,17 +326,17 @@ public class Forgetpassword extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Answer;
+    private rojerusan.RSButtonHover BackPageButton;
+    private javax.swing.JPasswordField NewPassword;
+    private rojerusan.RSButtonHover SaveButton;
+    private javax.swing.JTextField UserName;
     private javax.swing.JLabel answer;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JPanel newpassword;
-    private rojerusan.RSButtonHover rSButtonHover15;
-    private rojerusan.RSButtonHover rSButtonHover16;
-    private rojerusan.RSButtonHover rSButtonHover17;
+    private rojerusan.RSButtonHover rSButtonHover8;
     private javax.swing.JLabel securityques;
     private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables

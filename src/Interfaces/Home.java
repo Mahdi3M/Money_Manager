@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -279,29 +280,32 @@ public class Home extends javax.swing.JFrame {
         
         String s = (String)AccountNumber.getSelectedItem();
         try {
-            FileReader fr = new FileReader("src\\Settings.csv");
-            BufferedReader br = new BufferedReader(fr);
-
+            Scanner input = new Scanner(new FileReader("src\\Settings.csv"));
+            String line;
             //FileReader ffr=new FileReader("src\\database.txt");
             //BufferedReader bfr=new BufferedReader(ffr);
-
-            String line;
-            Boolean matched = false;
-            while ((line = br.readLine()) != null) {
+            
+            Double a1=0.0, a2=0.0;
+            while (input.hasNextLine()) {
+                line =  input.nextLine();
                 String[] arr = line.split(",");
                 if(s=="Account1")
                 {
-                    ShowBalance.setText(arr[0]);
-                    break;
+                    a1 += Double.parseDouble(arr[0]);
                 }
                 else if(s=="Account2")
                 {
-                    ShowBalance.setText(arr[1]);
-                    
+                    a2 += Double.parseDouble(arr[1]);
                 }
-                
             }
-
+            if(s=="Account1")
+            {
+                ShowBalance.setText(Double.toString(a1));
+            }
+            else if(s=="Account2")
+            {
+                ShowBalance.setText(Double.toString(a2));
+            }
             
 
         } catch (FileNotFoundException ex) {

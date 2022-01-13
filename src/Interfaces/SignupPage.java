@@ -41,6 +41,7 @@ public class SignupPage extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        rSButtonHover8 = new rojerusan.RSButtonHover();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -58,7 +59,6 @@ public class SignupPage extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         rSButtonHover1 = new rojerusan.RSButtonHover();
         Login = new rojerusan.RSButtonHover();
-        rSButtonHover8 = new rojerusan.RSButtonHover();
 
         jTextField5.setFont(new java.awt.Font("Segoe UI Light", 0, 20)); // NOI18N
         jTextField5.setForeground(new java.awt.Color(102, 102, 102));
@@ -101,6 +101,8 @@ public class SignupPage extends javax.swing.JFrame {
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 153, 153));
+        setFocusable(false);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -110,24 +112,38 @@ public class SignupPage extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(0, 51, 102));
         jLabel7.setText("SIGN UP");
 
+        rSButtonHover8.setBackground(new java.awt.Color(153, 51, 0));
+        rSButtonHover8.setText("X");
+        rSButtonHover8.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        rSButtonHover8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonHover8ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(188, Short.MAX_VALUE)
+                .addContainerGap(203, Short.MAX_VALUE)
                 .addComponent(jLabel7)
-                .addGap(100, 100, 100))
+                .addGap(138, 138, 138)
+                .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 24, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 70));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 70));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -198,6 +214,18 @@ public class SignupPage extends javax.swing.JFrame {
             }
         });
 
+        Login.setBackground(new java.awt.Color(153, 0, 0));
+        Login.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 181, 240)));
+        Login.setForeground(new java.awt.Color(0, 181, 240));
+        Login.setText("Login");
+        Login.setColorText(new java.awt.Color(0, 181, 240));
+        Login.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -221,12 +249,14 @@ public class SignupPage extends javax.swing.JFrame {
                     .addComponent(Password)
                     .addComponent(ContactNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ConfirmPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(DateSelector, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE))
+                    .addComponent(DateSelector, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(rSButtonHover1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(157, 157, 157))
+                .addGap(31, 31, 31)
+                .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,35 +289,14 @@ public class SignupPage extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(DateSelector, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(rSButtonHover1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rSButtonHover1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 530, 460));
-
-        Login.setBackground(new java.awt.Color(153, 0, 0));
-        Login.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 181, 240)));
-        Login.setForeground(new java.awt.Color(0, 181, 240));
-        Login.setText("Login");
-        Login.setColorText(new java.awt.Color(0, 181, 240));
-        Login.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
-        Login.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 90, 25));
-
-        rSButtonHover8.setBackground(new java.awt.Color(153, 51, 0));
-        rSButtonHover8.setText("X");
-        rSButtonHover8.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        rSButtonHover8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover8ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(rSButtonHover8, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 40, 24));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 530, 470));
 
         pack();
         setLocationRelativeTo(null);
